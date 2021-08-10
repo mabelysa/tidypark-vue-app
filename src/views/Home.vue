@@ -1,18 +1,27 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <h1>{{ message1 }}</h1>
+    <h2>
+      <i>
+        {{ message2 }}
+      </i>
+    </h2>
+    <h3>{{ message3 }}</h3>
   </div>
 </template>
 
-<script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+<style></style>
 
+<script>
 export default {
-  name: "Home",
-  components: {
-    HelloWorld,
+  data: function () {
+    return {
+      message1: "Welcome to Tidy Park!",
+      message2: "Go Green or Go Home!",
+      message3: "Hitting the streets, to keep NYC parks neat!",
+    };
   },
+  created: function () {},
+  methods: {},
 };
 </script>
