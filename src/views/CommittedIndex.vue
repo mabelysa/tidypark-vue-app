@@ -1,7 +1,8 @@
 <template>
-  <div class="parks-index">
+  <div class="committeds-index">
     <h1>{{ message }}</h1>
-    <div v-for="park in parks" :key="park.id">
+    <h2>{{ message2 }}</h2>
+    <div v-for="committed in committeds" :key="committed.id">
       <h2>{{ park.name }}</h2>
       <p>
         <b>Borough:</b>
@@ -32,18 +33,20 @@ import axios from "axios";
 export default {
   data: function () {
     return {
-      message: "NYC Parks!",
-      parks: [],
+      message: "Welcome to Your Account!",
+      message2:
+        "Don't stress, we'll clean this mess. You might be small and mighty but we'll make these parks nice and tidy!",
+      committeds: [],
     };
   },
   created: function () {
-    this.indexParks();
+    this.indexCommitteds();
   },
   methods: {
     indexParks: function () {
-      axios.get("http://localhost:3000/parks").then((response) => {
+      axios.get("http://localhost:3000/committeds").then((response) => {
         this.parks = response.data;
-        console.log("All parks:", this.parks);
+        console.log("Your Committed Parks:", this.committeds);
       });
     },
   },

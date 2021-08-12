@@ -11,7 +11,9 @@
       |
       <router-link to="/logout">Logout</router-link>
       |
-      <router-link to="/parks">Parks</router-link>
+      <router-link to="/parks">NYC Parks</router-link>
+      |
+      <router-link to="/committeds">My Account</router-link>
     </div>
     <router-view />
   </div>
