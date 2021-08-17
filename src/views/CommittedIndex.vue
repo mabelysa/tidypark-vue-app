@@ -1,12 +1,12 @@
 <template>
   <div class="committeds-index">
-    <h1>Welcome to your account,</h1>
+    <h1>Welcome to your account, {{ user.first_name }}</h1>
     <h2>{{ message2 }}</h2>
     <h2>{{ message3 }}</h2>
-    <div v-for="committed in committeds" :key="committed.id">
+    <div v-for="(committed, index) in committeds" :key="committed.id">
       <ol>
         <li>
-          <h2>{{ committed.park.name }}</h2>
+          <h2>{{ committed.park.name }} - {{ index + 1 }}</h2>
         </li>
       </ol>
       <!-- <h2>{{ committed }}</h2> -->
@@ -67,12 +67,15 @@ export default {
       message2: "Don't stress, we'll clean this mess.",
       message3: "You might be small and tiny but we'll make these parks nice and tidy!",
       committeds: [],
-      // user: {},
-      // current_user_id: localStorage.getItem("user_id"),
+      user: {},
+      current_user_id: localStorage.getItem("user_id"),
     };
   },
   created: function () {
-    // this.indexUsers();
+    axios.get("http://localhost:3000/users/" + this.current_user_id).then((response) => {
+      this.user = response.data;
+      console.log(response.data.users);
+    });
     this.indexCommitteds();
   },
   methods: {
@@ -82,12 +85,6 @@ export default {
         console.log("Your Committed Parks:", this.committeds);
       });
     },
-    // indexUsers: function () {
-    //   axios.get("http://localhost:3000/users/" + this.current_user_id).then((response) => {
-    //     this.user = response.data;
-    //     console.log(response.data.users);
-    //   });
-    // },
   },
 };
 </script>
