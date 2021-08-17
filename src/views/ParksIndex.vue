@@ -2,20 +2,24 @@
   <div class="parks-index">
     <h1>{{ message }}</h1>
     <div v-for="park in parks" :key="park.id">
-      <h2>{{ park.name }}</h2>
-      <p>
-        <b>Borough:</b>
-        {{ park.borough }}
-      </p>
-      <p>
-        <b>Address:</b>
-        {{ park.address }}
-      </p>
-      <!-- <p>All Info: {{ park }}</p> -->
-      <p>
-        <b>Size:</b>
-        {{ park.size }}
-      </p>
+      <ol>
+        <li>
+          <h2>{{ park.name }}</h2>
+        </li>
+        <p>
+          <b>Borough:</b>
+          {{ park.borough }}
+        </p>
+        <p>
+          <b>Address:</b>
+          {{ park.address }}
+        </p>
+        <!-- <p>All Info: {{ park }}</p> -->
+        <p>
+          <b>Size:</b>
+          {{ park.size }}
+        </p>
+      </ol>
       <img v-bind:src="park.image_url" alt="park.image_url" />
       <br />
       <router-link v-bind:to="`/parks/${park.id}`">

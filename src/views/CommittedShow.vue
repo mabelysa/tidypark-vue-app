@@ -2,19 +2,40 @@
   <div class="committeds-show">
     <div class="container">
       <h2>{{ park.name }}</h2>
-      <p>{{ park.borough }}</p>
-      <p>{{ park.size }}</p>
-      <p>{{ committed.observations }}</p>
-      <p>{{ committed.teamsize }}</p>
-      <p>{{ committed.tentativedate }}</p>
-      <p>{{ committed.experience }}</p>
-      <p>{{ committed.reason }}</p>
+      <p>
+        <b>Borough:</b>
+        {{ park.borough }}
+      </p>
+      <p>
+        <b>Size:</b>
+        {{ park.size }}
+      </p>
+      <p>
+        <b>Observations:</b>
+        {{ committed.observations }}
+      </p>
+      <p>
+        <b>Teamsize:</b>
+        {{ committed.teamsize }}
+      </p>
+      <p>
+        <b>Tentative Date:</b>
+        {{ committed.tentativedate }}
+      </p>
+      <p>
+        <b>Experience:</b>
+        {{ committed.experience }}
+      </p>
+      <p>
+        <b>Reason:</b>
+        {{ committed.reason }}
+      </p>
       <p><img v-bind:src="park.image_url" alt="park.image_url" /></p>
       <!-- <li v-if="$parent.getUserId() == post.user_id"> -->
       <router-link v-bind:to="`/committed/${committed.id}/edit`"><button>Edit Commit</button></router-link>
       <!-- </li> -->
       <br />
-      <router-link to="/committed">Back to your committed events!</router-link>
+      <router-link to="/committeds">Back to your committed events!</router-link>
       <ul>
         <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
       </ul>
