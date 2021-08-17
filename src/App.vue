@@ -9,11 +9,11 @@
       |
       <router-link to="/login">Login</router-link>
       |
-      <router-link to="/logout">Logout</router-link>
-      |
       <router-link to="/parks">NYC Parks</router-link>
       |
       <router-link to="/committeds">My Account</router-link>
+      |
+      <router-link to="/logout">Logout</router-link>
     </div>
     <router-view />
   </div>

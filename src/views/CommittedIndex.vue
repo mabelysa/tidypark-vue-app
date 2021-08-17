@@ -2,27 +2,29 @@
   <div class="committeds-index">
     <h1>{{ message }}</h1>
     <h2>{{ message2 }}</h2>
+    <h2>{{ message3 }}</h2>
     <div v-for="committed in committeds" :key="committed.id">
-      <h2>{{ park.name }}</h2>
+      <h2>{{ committed }}</h2>
       <p>
         <b>Borough:</b>
-        {{ park.borough }}
+        {{ committed.park.borough }}
       </p>
       <p>
         <b>Address:</b>
-        {{ park.address }}
+        {{ committed.park.address }}
       </p>
       <!-- <p>All Info: {{ park }}</p> -->
-      <p>
+      <!-- <p>
         <b>Size:</b>
         {{ park.size }}
-      </p>
-      <img v-bind:src="park.image_url" alt="park.image_url" />
+      </p> -->
+      <!-- <img v-bind:src="park.image_url" alt="park.image_url" /> -->
       <br />
-      <router-link v-bind:to="`/parks/${park.id}`">
+      <!-- <router-link v-bind:to="`/parks/${park.id}`">
         <button>Commit to {{ park.name }}!</button>
-      </router-link>
+      </router-link> -->
     </div>
+    <router-link to="/parks"><b>Back to all Parks!</b></router-link>
     <p>*pictures taken from nycgovparks.gov*</p>
   </div>
 </template>
@@ -34,8 +36,8 @@ export default {
   data: function () {
     return {
       message: "Welcome to Your Account!",
-      message2:
-        "Don't stress, we'll clean this mess. You might be small and mighty but we'll make these parks nice and tidy!",
+      message2: "Don't stress, we'll clean this mess.",
+      message3: "You might be small and tiny but we'll make these parks nice and tidy!",
       committeds: [],
     };
   },
@@ -43,9 +45,9 @@ export default {
     this.indexCommitteds();
   },
   methods: {
-    indexParks: function () {
+    indexCommitteds: function () {
       axios.get("http://localhost:3000/committeds").then((response) => {
-        this.parks = response.data;
+        this.committeds = response.data;
         console.log("Your Committed Parks:", this.committeds);
       });
     },
