@@ -49,7 +49,7 @@
         </div>
         <div>
           <label>Reason:</label>
-          <textarea id="needs" input type="text" v-model="newCommittedParams.needs"></textarea>
+          <textarea id="reasons" input type="text" v-model="newCommittedParams.reason"></textarea>
         </div>
         <!-- <router-link v-bind:to="`/committeds`"></router-link> -->
         <input type="submit" value="Commit to Pelham Bay Park " />

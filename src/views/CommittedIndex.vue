@@ -5,6 +5,7 @@
     <h2>{{ message3 }}</h2>
     <div v-for="committed in committeds" :key="committed.id">
       <h2>{{ committed.park.name }}</h2>
+      <!-- <h2>{{ committed }}</h2> -->
       <p>
         <b>Borough:</b>
         {{ committed.park.borough }}
@@ -18,7 +19,29 @@
         <b>Size:</b>
         {{ committed.park.size }}
       </p>
-      <img v-bind:src="committed.park.image_url" alt="committed.park.image_url" />
+      <p>
+        <b>Observations:</b>
+        {{ committed.observations }}
+      </p>
+      <p>
+        <b>Teamsize:</b>
+        {{ committed.teamsize }}
+      </p>
+      <p>
+        <b>Tentative Date:</b>
+        {{ committed.tentativedate }}
+      </p>
+      <p>
+        <b>Experience:</b>
+        {{ committed.experience }}
+      </p>
+      <p>
+        <b>Reason:</b>
+        {{ committed.reason }}
+      </p>
+      <router-link v-bind:to="`/committeds/${committed.id}`">
+        <img v-bind:src="committed.park.image_url" alt="committed.park.image_url" />
+      </router-link>
       <!-- <img v-bind:src="park.image_url" alt="park.image_url" /> -->
       <br />
       <!-- <router-link v-bind:to="`/parks/${park.id}`">

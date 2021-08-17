@@ -7,6 +7,7 @@ import Logout from "../views/Logout.vue";
 import ParksIndex from "../views/ParksIndex.vue";
 import ParksShow from "../views/ParksShow.vue";
 import CommittedIndex from "../views/CommittedIndex.vue";
+import CommittedShow from "../views/CommittedShow.vue";
 
 Vue.use(VueRouter);
 
@@ -30,6 +31,7 @@ const routes = [
   { path: "/parks", name: "parks-index", component: ParksIndex },
   { path: "/parks/:id", name: "parks-show", component: ParksShow },
   { path: "/committeds", name: "committeds-index", component: CommittedIndex },
+  { path: "/committeds/:id", name: "committeds-show", component: CommittedShow },
 ];
 
 const router = new VueRouter({
