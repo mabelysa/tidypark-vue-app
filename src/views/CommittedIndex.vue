@@ -1,10 +1,10 @@
 <template>
   <div class="committeds-index">
-    <h1>{{ message }}</h1>
+    <h1>Welcome to your account,</h1>
     <h2>{{ message2 }}</h2>
     <h2>{{ message3 }}</h2>
     <div v-for="committed in committeds" :key="committed.id">
-      <h2>{{ committed }}</h2>
+      <h2>{{ committed.park.name }}</h2>
       <p>
         <b>Borough:</b>
         {{ committed.park.borough }}
@@ -14,10 +14,11 @@
         {{ committed.park.address }}
       </p>
       <!-- <p>All Info: {{ park }}</p> -->
-      <!-- <p>
+      <p>
         <b>Size:</b>
-        {{ park.size }}
-      </p> -->
+        {{ committed.park.size }}
+      </p>
+      <img v-bind:src="committed.park.image_url" alt="committed.park.image_url" />
       <!-- <img v-bind:src="park.image_url" alt="park.image_url" /> -->
       <br />
       <!-- <router-link v-bind:to="`/parks/${park.id}`">
@@ -35,13 +36,16 @@ import axios from "axios";
 export default {
   data: function () {
     return {
-      message: "Welcome to Your Account!",
+      message: "Welcome to Your Account",
       message2: "Don't stress, we'll clean this mess.",
       message3: "You might be small and tiny but we'll make these parks nice and tidy!",
       committeds: [],
+      // user: {},
+      // current_user_id: localStorage.getItem("user_id"),
     };
   },
   created: function () {
+    // this.indexUsers();
     this.indexCommitteds();
   },
   methods: {
@@ -51,6 +55,12 @@ export default {
         console.log("Your Committed Parks:", this.committeds);
       });
     },
+    // indexUsers: function () {
+    //   axios.get("http://localhost:3000/users/" + this.current_user_id).then((response) => {
+    //     this.user = response.data;
+    //     console.log(response.data.users);
+    //   });
+    // },
   },
 };
 </script>

@@ -40,11 +40,11 @@
           <input type="text" v-model="newCommittedParams.teamsize" />
         </div>
         <div>
-          <label>Date: Type in dates you're available.</label>
+          <label>Date (Type in dates you're available.):</label>
           <input type="text" v-model="newCommittedParams.tentativedate" />
         </div>
         <div>
-          <label for="checkbox">Experience: How many parks have you cleaned?</label>
+          <label for="checkbox">Experience (How many parks have you cleaned?):</label>
           <input type="checkbox" v-model="newCommittedParams.experience" />
         </div>
         <div>
@@ -78,9 +78,6 @@ export default {
     axios.get("/parks/" + this.$route.params.id).then((response) => {
       this.park = response.data;
     });
-    // axios.get("/committed/" + this.$route.params.id).then((response) => {
-    //   this.committed = response.data;
-    // });
   },
   methods: {
     createCommitted: function () {
