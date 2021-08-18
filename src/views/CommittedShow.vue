@@ -1,6 +1,7 @@
 <template>
   <div class="committeds-show">
     <div class="container">
+      <p><img v-bind:src="park.image_url" alt="park.image_url" /></p>
       <h2>{{ park.name }}</h2>
       <p>
         <b>Borough:</b>
@@ -30,10 +31,10 @@
         <b>Reason:</b>
         {{ committed.reason }}
       </p>
-      <p><img v-bind:src="park.image_url" alt="park.image_url" /></p>
       <!-- <li v-if="$parent.getUserId() == post.user_id"> -->
-      <router-link v-bind:to="`/committed/${committed.id}/edit`"><button>Edit Commit</button></router-link>
+      <router-link v-bind:to="`/committeds/${committed.id}/edit`"><button>Edit Commitment</button></router-link>
       <!-- </li> -->
+      <br />
       <br />
       <router-link to="/committeds">Back to your committed events!</router-link>
       <ul>
@@ -54,12 +55,18 @@ export default {
     };
   },
   created: function () {
-    axios.get("/committeds/" + this.$route.params.id).then((response) => {
-      this.committed = response.data;
-      console.log(this.committed.park);
-      this.park = response.data.park;
-      console.log(this.park);
-    });
+    axios
+      .get("/committeds/" + this.$route.params.id)
+      .then((response) => {
+        this.committed = response.data;
+        console.log(this.committed.park);
+        this.park = response.data.park;
+        console.log(this.park);
+      })
+      .catch((error) => {
+        console.log("committed create error", error.response);
+        this.errors = error.response.data.errors;
+      });
   },
 };
 </script>
