@@ -82,12 +82,12 @@ export default {
   },
   methods: {
     updateCommitted: function () {
-      console.log("updating committed park.");
-      this.currentCommittedParams.park_id = `${this.park.id}`;
-      console.log(this.currentCommittedParams);
+      // console.log("updating committed park.");
+      // this.currentCommittedParams.park_id = `${this.park.id}`;
+      // console.log(this.currentCommittedParams);
       axios.patch(`/committeds/${this.$route.params.id}`, this.currentCommittedParams).then((response) => {
         console.log(response.data);
-        this.$router.push("/committeds/:id");
+        this.$router.push(`/committeds/${response.data.id}`);
       });
     },
   },

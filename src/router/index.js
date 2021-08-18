@@ -9,6 +9,7 @@ import ParksShow from "../views/ParksShow.vue";
 import CommittedIndex from "../views/CommittedIndex.vue";
 import CommittedShow from "../views/CommittedShow.vue";
 import CommittedEdit from "../views/CommittedEdit.vue";
+import ContactInfo from "../views/ContactInfo.vue";
 
 Vue.use(VueRouter);
 
@@ -34,6 +35,7 @@ const routes = [
   { path: "/committeds", name: "committeds-index", component: CommittedIndex },
   { path: "/committeds/:id", name: "committeds-show", component: CommittedShow },
   { path: "/committeds/:id/edit", name: "committeds-edit", component: CommittedEdit },
+  { path: "/users/:id/", name: "contact-edit", component: ContactInfo },
 ];
 
 const router = new VueRouter({
