@@ -1,9 +1,10 @@
 <template>
   <div class="parks-index">
     <h1>{{ message }}</h1>
-    <div v-for="(park, index) in parks" :key="park.id">
+    View By Borough:
+    <input v-model="boroughFilter" />
+    <div v-for="(park, index) in filterBy(parks, boroughFilter, 'borough')" :key="park.id">
       <h2>{{ park.name }} - {{ index + 1 }}</h2>
-
       <p>
         <b>Borough:</b>
         {{ park.borough }}
@@ -29,14 +30,17 @@
 
 <script>
 import axios from "axios";
+import Vue2Filters from "vue2-filters";
 
 export default {
   data: function () {
     return {
       message: "NYC Parks!",
       parks: [],
+      boroughFilter: "",
     };
   },
+  mixins: [Vue2Filters.mixin],
   created: function () {
     this.indexParks();
   },
