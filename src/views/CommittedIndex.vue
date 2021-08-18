@@ -1,14 +1,10 @@
 <template>
   <div class="committeds-index">
-    <h1>Welcome to your account, {{ user.first_name }}</h1>
+    <h1>Welcome to your account, {{ user.first_name }}!</h1>
     <h2>{{ message2 }}</h2>
     <h2>{{ message3 }}</h2>
     <div v-for="(committed, index) in committeds" :key="committed.id">
-      <ol>
-        <li>
-          <h2>{{ committed.park.name }} - {{ index + 1 }}</h2>
-        </li>
-      </ol>
+      <h2>{{ committed.park.name }} - {{ index + 1 }}</h2>
       <!-- <h2>{{ committed }}</h2> -->
       <p>
         <b>Borough:</b>
