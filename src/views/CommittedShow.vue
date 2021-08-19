@@ -16,6 +16,10 @@
         {{ committed.observations }}
       </p>
       <p>
+        <b>Needs:</b>
+        {{ committed.needs }}
+      </p>
+      <p>
         <b>Teamsize:</b>
         {{ committed.teamsize }}
       </p>
