@@ -82,6 +82,7 @@ export default {
     axios.get("/committeds/" + this.$route.params.id).then((response) => {
       this.committed = response.data;
       this.park = response.data.park;
+      this.currentCommittedParams = response.data;
       console.log(this.park);
     });
   },
