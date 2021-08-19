@@ -29,17 +29,15 @@
 
 <script>
 import axios from "axios";
-import Vue2Filters from "vue2-filters";
 
 export default {
   data: function () {
     return {
       message: "Update your contact info here!",
-      parks: [],
-      boroughFilter: "",
+      user: {},
     };
   },
-  mixins: [Vue2Filters.mixin],
+
   created: function () {
     this.indexParks();
   },
