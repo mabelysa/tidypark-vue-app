@@ -43,8 +43,10 @@
           <label>Date (Type in dates you're available.):</label>
           <input type="text" v-model="newCommittedParams.tentativedate" />
         </div>
+        <!-- <div v-if="hasDone0()"> -->
         <div>
-          <label for="checkbox">Experience (How many parks have you cleaned?):</label>
+          <label>Experience: How many parks have you cleaned?</label>
+          <label for="checkbox">0?</label>
           <input type="checkbox" v-model="newCommittedParams.experience" />
         </div>
         <div>
