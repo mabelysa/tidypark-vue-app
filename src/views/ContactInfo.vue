@@ -1,8 +1,8 @@
 <template>
   <div class="contact-index">
     <form v-on:submit.prevent="updateContact()">
-    <h1>{{ message }}</h1>
-     <ul>
+      <h1>{{ message }}</h1>
+      <ul>
         <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
       </ul>
       <h2>Edit your contact info below:</h2>
@@ -20,10 +20,10 @@
       </div>
       <br />
       <input type="submit" value="Submit" />
-      <router-link v-bind:to="`/users/${user.id}`">
+      <router-link v-bind:to="`/committeds`">
         <button>Back to {{ user.first_name }} Account</button>
       </router-link>
-    </div>
+    </form>
   </div>
 </template>
 

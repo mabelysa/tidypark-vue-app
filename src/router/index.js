@@ -35,7 +35,7 @@ const routes = [
   { path: "/committeds", name: "committeds-index", component: CommittedIndex },
   { path: "/committeds/:id", name: "committeds-show", component: CommittedShow },
   { path: "/committeds/:id/edit", name: "committeds-edit", component: CommittedEdit },
-  { path: "/users/:id/", name: "contact-edit", component: ContactInfo },
+  { path: "/users/:id/edit", name: "contact-edit", component: ContactInfo },
 ];
 
 const router = new VueRouter({

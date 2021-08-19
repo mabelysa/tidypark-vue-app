@@ -51,9 +51,14 @@
         </div>
         <!-- <router-link v-bind:to="`/committeds`"></router-link> -->
         <input type="submit" value="Update Commitment!" />
+        <button v-on:click="destroyCommitted()">Delete Commitment!</button>
         <br />
         <br />
         <router-link to="/committeds/:id">Back to {{ park.name }} !</router-link>
+        <br />
+        <router-link v-bind:to="`/committeds/${committed.id}`">
+          <button>Back to {{ park.name }}</button>
+        </router-link>
       </form>
     </div>
     <!-- <li v-if="$parent.getUserId() == park.user_id"> -->
@@ -70,24 +75,33 @@ export default {
       errors: [],
       park: {},
       currentCommittedParams: {},
+      committed: {},
     };
   },
   created: function () {
-    axios.get("/parks/" + this.$route.params.id).then((response) => {
-      this.park = response.data;
-    });
     axios.get("/committeds/" + this.$route.params.id).then((response) => {
       this.committed = response.data;
+      this.park = response.data.park;
+      console.log(this.park);
     });
   },
   methods: {
     updateCommitted: function () {
-      // console.log("updating committed park.");
-      // this.currentCommittedParams.park_id = `${this.park.id}`;
-      // console.log(this.currentCommittedParams);
-      axios.patch(`/committeds/${this.$route.params.id}`, this.currentCommittedParams).then((response) => {
-        console.log(response.data);
-        this.$router.push(`/committeds/${response.data.id}`);
+      axios
+        .patch(`/committeds/${this.$route.params.id}`, this.currentCommittedParams)
+        .then((response) => {
+          console.log(response.data);
+          this.$router.push(`/committeds/${response.data.id}`);
+        })
+        .catch((error) => {
+          console.log("updated committed create error", error.response);
+          this.errors = error.response.data.errors;
+        });
+    },
+    destroyCommitted: function () {
+      axios.delete(`/committeds/${this.$route.params.id}`).then((response) => {
+        console.log("Committment Deleted", response.data);
+        this.$router.push("/committeds");
       });
     },
   },

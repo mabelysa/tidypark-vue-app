@@ -3,6 +3,9 @@
     <h1>Welcome to your account, {{ user.first_name }}!</h1>
     <h2>{{ message2 }}</h2>
     <h2>{{ message3 }}</h2>
+    <router-link v-bind:to="`/users/${user.id}/edit`">
+      <button>Edit Contact Info</button>
+    </router-link>
     <div v-for="(committed, index) in committeds" :key="committed.id">
       <h2>{{ committed.park.name }} - {{ index + 1 }}</h2>
       <!-- <h2>{{ committed }}</h2> -->
