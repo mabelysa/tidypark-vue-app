@@ -2,7 +2,8 @@
   <div class="committeds-index">
     <h1>Welcome to Your Account, {{ user.first_name }}!</h1>
     <h2>{{ message2 }}</h2>
-    <h2>{{ message3 }}</h2>
+    <h3>{{ message3 }}</h3>
+    <h3>{{ message4 }}</h3>
     <router-link v-bind:to="`/users/${user.id}/edit`">
       <button>Edit Contact Info</button>
     </router-link>
@@ -64,7 +65,8 @@ export default {
     return {
       message: "Welcome to Your Account",
       message2: "Don't stress, we'll clean this mess.",
-      message3: "You may be small but you are mighty! Let's go make these parks nice and tidy!",
+      message3: "You may be small but you are mighty.",
+      message4: "Let's go make these parks nice and tidy!",
       committeds: [],
       user: {},
       current_user_id: localStorage.getItem("user_id"),
