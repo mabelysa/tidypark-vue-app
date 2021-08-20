@@ -1,11 +1,11 @@
 <template>
   <div class="parks-index">
     <h1>{{ message }}</h1>
+    <button v-on:click="mostRequested()">Most Requested Park</button>
+    <h1>{{ mostRequestedPark }}</h1>
     View By Borough:
     <input v-model="boroughFilter" />
     <div v-for="(park, index) in filterBy(parks, boroughFilter, 'borough')" :key="park.id">
-      <button v-on:click="mostRequested()">Most Requested</button>
-      {{ mostRequestedPark }}
       <br />
 
       <h2>{{ park.name }} - {{ index + 1 }}</h2>
