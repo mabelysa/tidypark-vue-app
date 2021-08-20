@@ -72,6 +72,11 @@ export default {
         return committed["park"]["name"];
       });
       console.log(newCommitteds);
+      // if (condition) {
+      //   //  block of code to be executed if the condition is true
+      // } else {
+      //   //  block of code to be executed if the condition is false
+      // }
 
       var sortedCommitteds = newCommitteds.sort();
       var start = newCommitteds[0],
