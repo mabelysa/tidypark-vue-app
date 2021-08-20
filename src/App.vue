@@ -5,15 +5,21 @@
       |
       <router-link to="/about">About</router-link>
       |
-      <router-link to="/signup">Signup</router-link>
+      <div v-if="!isLoggedIn()" class="nav-item">
+        <router-link to="/signup">Signup</router-link>
+      </div>
       |
-      <router-link to="/login">Login</router-link>
+      <div v-if="!isLoggedIn()" class="nav-item">
+        <router-link to="/login">Login</router-link>
+      </div>
       |
       <router-link to="/parks">NYC Parks</router-link>
       |
       <router-link to="/committeds">My Account</router-link>
       |
-      <router-link to="/logout">Logout</router-link>
+      <div v-if="isLoggedIn()" class="nav-item">
+        <router-link to="/logout">Logout</router-link>
+      </div>
     </div>
     <router-view />
   </div>
@@ -41,3 +47,18 @@
   color: #42b983;
 }
 </style>
+
+<script>
+// import axios from "axios";
+export default {
+  methods: {
+    isLoggedIn: function () {
+      if (localStorage.getItem("jwt")) {
+        return true;
+      } else {
+        return false;
+      }
+    },
+  },
+};
+</script>
