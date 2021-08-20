@@ -2,6 +2,7 @@
   <div class="parks-show">
     <div class="container">
       <p><img v-bind:src="park.image_url" alt="park.image_url" /></p>
+      <div id="map"></div>
       <h2>{{ park.name }}</h2>
       <p>
         <b>Borough:</b>
@@ -68,7 +69,15 @@
   </div>
 </template>
 
+<style>
+#map {
+  height: 400px;
+  width: auto;
+}
+</style>
+
 <script>
+/* global mapboxgl*/
 import axios from "axios";
 export default {
   data: function () {
@@ -82,6 +91,9 @@ export default {
     axios.get("/parks/" + this.$route.params.id).then((response) => {
       this.park = response.data;
     });
+  },
+  mounted: function () {
+    this.setUpMap();
   },
   methods: {
     createCommitted: function () {
@@ -99,6 +111,21 @@ export default {
           this.errors = error.response.data.errors;
         });
     },
+    setUpMap: function () {
+      mapboxgl.accessToken =
+        "pk.eyJ1IjoibWFiZWx5c2EiLCJhIjoiY2tycDl4dTR1MDR5MDJwbjg3ZGxveHV3YiJ9.SkvlJ4UOYL86XpNotLqc1A";
+      var map = new mapboxgl.Map({
+        container: "map", // container ID
+        style: "mapbox://styles/mapbox/streets-v11", // style URL
+        center: [-74.5, 40], // starting position [lng, lat]
+        zoom: 9, // starting zoom
+      });
+      console.log(map);
+    },
+    // dropMarker(position) {
+    //   let marker = new H.map.Marker({ lat: position.Latitude, lng: position.Longitude });
+    //   this.map.
+    // },
   },
 };
 </script>
