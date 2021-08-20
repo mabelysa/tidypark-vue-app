@@ -1,8 +1,8 @@
 <template>
   <div class="parks-index">
     <h1>{{ message }}</h1>
-    <button v-on:click="mostRequested()">Most Requested Park</button>
-    <h1>{{ mostRequestedPark }}</h1>
+    <!-- <button v-on:click="mostRequested()">Most Requested Park</button> -->
+    <h1>Next Park to Clean Is...{{ mostRequestedPark }}</h1>
     View By Borough:
     <input v-model="boroughFilter" />
     <div v-for="(park, index) in filterBy(parks, boroughFilter, 'borough')" :key="park.id">
@@ -50,11 +50,7 @@ export default {
   created: function () {
     this.indexParks();
     this.indexCommitteds();
-    this.mostRequested();
-    setTimeout(this.mostRequested(), 1);
   },
-  // mounted: function () {
-  // },
   methods: {
     indexParks: function () {
       axios.get("http://localhost:3000/parks").then((response) => {
@@ -67,6 +63,7 @@ export default {
         this.committeds = response.data;
         console.log("All committeds:", this.committeds);
       });
+      setTimeout(() => this.mostRequested(), 2000);
     },
 
     mostRequested: function () {
