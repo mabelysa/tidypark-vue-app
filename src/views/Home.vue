@@ -7,6 +7,17 @@
       </i>
     </h2>
     <h3>{{ message3 }}</h3>
+    <h3>Let's Get Started!</h3>
+    <h3>Create an account using the signup button.</h3>
+    <h3>{{ message4 }}</h3>
+    <router-link v-bind:to="`/signup/`">
+      <button>SignUp Here!</button>
+    </router-link>
+    <br />
+    <br />
+    <router-link v-bind:to="`/parks/`">
+      <button>NYC Parks</button>
+    </router-link>
   </div>
 </template>
 
@@ -19,6 +30,7 @@ export default {
       message1: "Welcome to Tidy Park!",
       message2: "Go Green or Go Home!",
       message3: "Hitting the streets, to keep NYC parks neat!",
+      message4: "Login and click on the NYC Parks button to select which parks need some TLC ;)",
     };
   },
   created: function () {},

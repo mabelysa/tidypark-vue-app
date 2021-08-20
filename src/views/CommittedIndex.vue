@@ -1,6 +1,6 @@
 <template>
   <div class="committeds-index">
-    <h1>Welcome to your account, {{ user.first_name }}!</h1>
+    <h1>Welcome to Your Account, {{ user.first_name }}!</h1>
     <h2>{{ message2 }}</h2>
     <h2>{{ message3 }}</h2>
     <router-link v-bind:to="`/users/${user.id}/edit`">
@@ -64,7 +64,7 @@ export default {
     return {
       message: "Welcome to Your Account",
       message2: "Don't stress, we'll clean this mess.",
-      message3: "You might be small and tiny but we'll make these parks nice and tidy!",
+      message3: "You may be small but you are mighty! Let's go make these parks nice and tidy!",
       committeds: [],
       user: {},
       current_user_id: localStorage.getItem("user_id"),
