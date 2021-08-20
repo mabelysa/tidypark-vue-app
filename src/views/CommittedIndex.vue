@@ -65,8 +65,8 @@ export default {
     return {
       message: "Welcome to Your Account",
       message2: "Don't stress, we'll clean this mess.",
-      message3: "You may be small but you are mighty.",
-      message4: "Let's go make these parks nice and tidy!",
+      message3: "You may be small but you are mighty...",
+      message4: "now let's go make these parks nice and tidy!",
       committeds: [],
       user: {},
       current_user_id: localStorage.getItem("user_id"),
