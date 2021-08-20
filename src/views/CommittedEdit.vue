@@ -56,9 +56,9 @@
         <br />
         <router-link to="/committeds/:id">Back to {{ park.name }} !</router-link>
         <br />
-        <router-link v-bind:to="`/committeds/${committed.id}`">
+        <!-- <router-link v-bind:to="`/committeds/${committed.id}`">
           <button>Back to {{ park.name }}</button>
-        </router-link>
+        </router-link> -->
       </form>
     </div>
     <!-- <li v-if="$parent.getUserId() == park.user_id"> -->
