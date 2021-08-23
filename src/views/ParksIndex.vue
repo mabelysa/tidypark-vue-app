@@ -80,7 +80,7 @@ export default {
         this.committeds = response.data;
         console.log("All committeds:", this.committeds);
       });
-      setTimeout(() => this.mostRequested(), 2000);
+      setTimeout(() => this.mostRequested(), 1000);
     },
 
     mostRequested: function () {

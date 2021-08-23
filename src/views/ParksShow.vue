@@ -2,7 +2,7 @@
   <div class="parks-show">
     <div class="container">
       <p><img v-bind:src="park.image_url" alt="park.image_url" /></p>
-      <div id="map"></div>
+      <!-- <div id="map"></div> -->
       <h2>{{ park.name }}</h2>
       <p>
         <b>Borough:</b>
@@ -45,10 +45,19 @@
           <input type="text" v-model="newCommittedParams.tentativedate" />
         </div>
         <!-- <div v-if="hasDone0()"> -->
-        <div>
+        <!-- <div>
           <label>Experience: How many parks have you cleaned?</label>
-          <label for="checkbox">0?</label>
-          <input type="checkbox" v-model="newCommittedParams.experience" />
+          <label for="none">0?</label>
+          <input type="checkbox" value="0" v-model="newCommittedParams.experience" />
+        </div> -->
+        <div>
+          <select v-model="newCommittedParams.experience">
+            <option disabled value="">Please select one</option>
+            <option>0</option>
+            <option>1-2</option>
+            <option>3+</option>
+          </select>
+          <span>{{ newCommittedParams.experience }} Selected:</span>
         </div>
         <div>
           <label>Reason:</label>
@@ -69,15 +78,7 @@
   </div>
 </template>
 
-<style>
-#map {
-  height: 400px;
-  width: auto;
-}
-</style>
-
 <script>
-/* global mapboxgl*/
 import axios from "axios";
 export default {
   data: function () {
@@ -92,18 +93,15 @@ export default {
       this.park = response.data;
     });
   },
-  mounted: function () {
-    this.setUpMap();
-  },
   methods: {
     createCommitted: function () {
       console.log("creating new commit.");
       this.newCommittedParams.park_id = `${this.park.id}`;
-      console.log(this.newCommittedParams);
+      console.log("this is new committed params", this.newCommittedParams);
       axios
         .post("/committeds", this.newCommittedParams)
         .then((response) => {
-          console.log(response.data);
+          console.log("this is response data", response.data);
           this.$router.push("/committeds");
         })
         .catch((error) => {
@@ -111,21 +109,6 @@ export default {
           this.errors = error.response.data.errors;
         });
     },
-    setUpMap: function () {
-      mapboxgl.accessToken =
-        "pk.eyJ1IjoibWFiZWx5c2EiLCJhIjoiY2tycDl4dTR1MDR5MDJwbjg3ZGxveHV3YiJ9.SkvlJ4UOYL86XpNotLqc1A";
-      var map = new mapboxgl.Map({
-        container: "map", // container ID
-        style: "mapbox://styles/mapbox/streets-v11", // style URL
-        center: [12.550343, 55.665957], // starting position [lng, lat]
-        zoom: 9, // starting zoom
-      });
-      console.log(map);
-    },
-    // dropMarker(position) {
-    //   let marker = new H.map.Marker({ lat: position.Latitude, lng: position.Longitude });
-    //   this.map.addObject(marker);
-    // },
   },
 };
 </script>
