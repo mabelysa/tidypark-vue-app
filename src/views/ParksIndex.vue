@@ -3,9 +3,9 @@
     <h1>{{ message }}</h1>
     <!-- <button v-on:click="mostRequested()">Most Requested Park</button> -->
     <h1>Next Park to Clean Is...{{ mostRequestedPark }}</h1>
-    View By Borough:
-    <input v-model="boroughFilter" />
-    <div v-for="(park, index) in filterBy(parks, boroughFilter, 'borough')" :key="park.id">
+    View By Borough, Name or Size:
+    <input v-model="searchFilter" />
+    <div v-for="(park, index) in filterBy(parks, searchFilter, 'borough', 'name', 'size')" :key="park.id">
       <br />
 
       <h2>{{ park.name }} - {{ index + 1 }}</h2>
@@ -41,7 +41,7 @@ export default {
     return {
       message: "NYC Parks!",
       parks: [],
-      boroughFilter: "",
+      searchFilter: "",
       committeds: [],
       mostRequestedPark: "",
     };
