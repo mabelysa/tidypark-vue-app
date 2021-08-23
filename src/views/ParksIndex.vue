@@ -38,8 +38,10 @@ body {
   padding: 0;
 }
 #map {
-  width: 50%;
-  height: 700px;
+  width: 75%;
+  height: 500px;
+  margin-left: auto;
+  margin-right: auto;
 }
 </style>
 
