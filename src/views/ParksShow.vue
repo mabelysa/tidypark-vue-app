@@ -117,14 +117,14 @@ export default {
       var map = new mapboxgl.Map({
         container: "map", // container ID
         style: "mapbox://styles/mapbox/streets-v11", // style URL
-        center: [-74.5, 40], // starting position [lng, lat]
+        center: [12.550343, 55.665957], // starting position [lng, lat]
         zoom: 9, // starting zoom
       });
       console.log(map);
     },
     // dropMarker(position) {
     //   let marker = new H.map.Marker({ lat: position.Latitude, lng: position.Longitude });
-    //   this.map.
+    //   this.map.addObject(marker);
     // },
   },
 };
