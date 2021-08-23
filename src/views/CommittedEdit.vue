@@ -20,11 +20,11 @@
           <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
         </ul>
         <div>
-          <label>Observations:</label>
+          <label><b>Observations:</b></label>
           <input type="text" v-model="currentCommittedParams.observations" />
         </div>
         <div>
-          <label>Needs:</label>
+          <label><b>Needs:</b></label>
           <textarea id="needs" input type="text" v-model="currentCommittedParams.needs"></textarea>
           <!-- <small
             v-if="newCommittedParams.needs.length > 50 && newCommittedParams.needs.length < 100"
@@ -34,19 +34,29 @@
           </small> -->
         </div>
         <div>
-          <label>Team Size:</label>
+          <label><b>Team Size:</b></label>
           <input type="text" v-model="currentCommittedParams.teamsize" />
         </div>
         <div>
-          <label>Date (Type in dates you're available.):</label>
+          <label><b>Date (Type in dates you're available):</b></label>
           <input type="text" v-model="currentCommittedParams.tentativedate" />
         </div>
-        <div>
+        <!-- <div>
           <label for="checkbox">Experience (How many parks have you cleaned?):</label>
           <input type="checkbox" v-model="currentCommittedParams.experience" />
+        </div> -->
+        <div>
+          <label><b>Experience: (Prior park cleanups?)</b></label>
+          <select v-model="currentCommittedParams.experience">
+            <option disabled value="">Please select one</option>
+            <option>0</option>
+            <option>1-2</option>
+            <option>3+</option>
+          </select>
+          <span>Selected: {{ currentCommittedParams.experience }}</span>
         </div>
         <div>
-          <label>Reason:</label>
+          <label><b>Reason:</b></label>
           <textarea id="reasons" input type="text" v-model="currentCommittedParams.reason"></textarea>
         </div>
         <!-- <router-link v-bind:to="`/committeds`"></router-link> -->
