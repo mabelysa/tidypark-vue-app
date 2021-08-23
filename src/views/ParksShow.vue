@@ -23,11 +23,11 @@
           <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
         </ul>
         <div>
-          <label>Observations:</label>
+          <label><b>Observations:</b></label>
           <input type="text" v-model="newCommittedParams.observations" />
         </div>
         <div>
-          <label>Needs:</label>
+          <label><b>Needs:</b></label>
           <textarea id="needs" input type="text" v-model="newCommittedParams.needs"></textarea>
           <!-- <small
             v-if="newCommittedParams.needs.length > 50 && newCommittedParams.needs.length < 100"
@@ -37,11 +37,13 @@
           </small> -->
         </div>
         <div>
-          <label>Team Size:</label>
+          <label>
+            <b>Team Size:</b>
+          </label>
           <input type="text" v-model="newCommittedParams.teamsize" />
         </div>
         <div>
-          <label>Date (Type in dates you're available.):</label>
+          <label><b>Date (Type in dates you're available):</b></label>
           <input type="text" v-model="newCommittedParams.tentativedate" />
         </div>
         <!-- <div v-if="hasDone0()"> -->
@@ -51,16 +53,17 @@
           <input type="checkbox" value="0" v-model="newCommittedParams.experience" />
         </div> -->
         <div>
+          <label><b>Experience: (Prior park cleanups?)</b></label>
           <select v-model="newCommittedParams.experience">
             <option disabled value="">Please select one</option>
             <option>0</option>
             <option>1-2</option>
             <option>3+</option>
           </select>
-          <span>{{ newCommittedParams.experience }} Selected:</span>
+          <span>Selected: {{ newCommittedParams.experience }}</span>
         </div>
         <div>
-          <label>Reason:</label>
+          <label><b>Reason:</b></label>
           <textarea id="reasons" input type="text" v-model="newCommittedParams.reason"></textarea>
         </div>
         <!-- <router-link v-bind:to="`/committeds`"></router-link> -->
