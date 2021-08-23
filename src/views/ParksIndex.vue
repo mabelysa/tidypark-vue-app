@@ -1,6 +1,7 @@
 <template>
   <div class="parks-index">
     <h1>{{ message }}</h1>
+    <div id="map"></div>
     <!-- <button v-on:click="mostRequested()">Most Requested Park</button> -->
     <h1>Next Park to Clean Is...{{ mostRequestedPark }}</h1>
     View By Borough, Name or Size:
@@ -32,7 +33,19 @@
   </div>
 </template>
 
+<style>
+body {
+  margin: 0;
+  padding: 0;
+}
+#map {
+  width: auto;
+  height: 700px;
+}
+</style>
+
 <script>
+/* global mapboxgl*/
 import axios from "axios";
 import Vue2Filters from "vue2-filters";
 
@@ -51,6 +64,9 @@ export default {
     this.indexParks();
     this.indexCommitteds();
   },
+  mounted: function () {
+    this.displayMap();
+  },
   methods: {
     indexParks: function () {
       axios.get("http://localhost:3000/parks").then((response) => {
@@ -58,6 +74,7 @@ export default {
         console.log("All parks:", this.parks);
       });
     },
+
     indexCommitteds: function () {
       axios.get("http://localhost:3000/committeds/all").then((response) => {
         this.committeds = response.data;
@@ -88,6 +105,37 @@ export default {
       }
       console.log(mostRequestedPark);
       this.mostRequestedPark = mostRequestedPark;
+    },
+
+    displayMap: function () {
+      mapboxgl.accessToken = process.env.VUE_APP_TOKEN;
+
+      var map = new mapboxgl.Map({
+        container: "map",
+        // Replace YOUR_STYLE_URL with your style URL.
+        style: "mapbox://styles/mabelysa/cksorx77f1yyd17n4f9mye5ty",
+        center: [-73.98553821722048, 40.743916217262516],
+        zoom: 9.0,
+      });
+      console.log(map);
+
+      map.on("click", function (e) {
+        // If the user clicked on one of your markers, get its information.
+        var features = map.queryRenderedFeatures(e.point, {
+          layers: ["nyc-parks"], // replace with your layer name
+        });
+        if (!features.length) {
+          return;
+        }
+        var feature = features[0];
+
+        var popup = new mapboxgl.Popup({ offset: [0, -15] })
+          .setLngLat(feature.geometry.coordinates)
+          .setHTML("<h3>" + feature.properties.name + "</h3>" + "<p>" + feature.properties.description + "</p>")
+          .addTo(map);
+        popup.addTo(map);
+      });
+      console.log(map);
     },
   },
 };
