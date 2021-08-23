@@ -8,7 +8,6 @@
     <input v-model="searchFilter" />
     <div v-for="(park, index) in filterBy(parks, searchFilter, 'borough', 'name', 'size')" :key="park.id">
       <br />
-
       <h2>{{ park.name }} - {{ index + 1 }}</h2>
       <p>
         <b>Borough:</b>
@@ -39,7 +38,7 @@ body {
   padding: 0;
 }
 #map {
-  width: auto;
+  width: 50%;
   height: 700px;
 }
 </style>
@@ -80,7 +79,7 @@ export default {
         this.committeds = response.data;
         console.log("All committeds:", this.committeds);
       });
-      setTimeout(() => this.mostRequested(), 1000);
+      setTimeout(() => this.mostRequested(), 7000);
     },
 
     mostRequested: function () {
@@ -88,7 +87,7 @@ export default {
       var newCommitteds = this.committeds.map(function (committed) {
         return committed["park"]["name"];
       });
-      console.log(newCommitteds);
+      console.log("displays most requested park", newCommitteds);
       // if (condition) {
       //   //  block of code to be executed if the condition is true
       // } else {
@@ -103,7 +102,7 @@ export default {
           mostRequestedPark = sortedCommitteds[i];
         }
       }
-      console.log(mostRequestedPark);
+      console.log("counts most requested park", mostRequestedPark);
       this.mostRequestedPark = mostRequestedPark;
     },
 
@@ -117,7 +116,7 @@ export default {
         center: [-73.98553821722048, 40.743916217262516],
         zoom: 9.0,
       });
-      console.log(map);
+      console.log("this is the map", map);
 
       map.on("click", function (e) {
         // If the user clicked on one of your markers, get its information.
@@ -135,7 +134,7 @@ export default {
           .addTo(map);
         popup.addTo(map);
       });
-      console.log(map);
+      console.log("shows map again", map);
     },
   },
 };

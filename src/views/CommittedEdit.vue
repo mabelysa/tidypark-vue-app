@@ -61,15 +61,15 @@
         </div>
         <!-- <router-link v-bind:to="`/committeds`"></router-link> -->
         <input type="submit" value="Update Commitment!" />
-        <button v-on:click="destroyCommitted()">Delete Commitment!</button>
-        <br />
-        <br />
-        <router-link v-bind:to="`/committeds/${committed.id}`">Back to {{ park.name }} !</router-link>
-        <br />
         <!-- <router-link v-bind:to="`/committeds/${committed.id}`">
           <button>Back to {{ park.name }}</button>
         </router-link> -->
       </form>
+      <br />
+      <button v-on:click="destroyCommitted(committed)">Delete Commitment!</button>
+      <br />
+      <br />
+      <router-link v-bind:to="`/committeds/${committed.id}`">Back to {{ park.name }} !</router-link>
     </div>
     <!-- <li v-if="$parent.getUserId() == park.user_id"> -->
     <!-- </li> -->
@@ -109,8 +109,8 @@ export default {
           this.errors = error.response.data.errors;
         });
     },
-    destroyCommitted: function () {
-      axios.delete(`/committeds/${this.$route.params.id}`).then((response) => {
+    destroyCommitted: function (committed) {
+      axios.delete("/committeds/" + committed.id).then((response) => {
         console.log("Committment Deleted", response.data);
         this.$router.push("/committeds");
       });

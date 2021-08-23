@@ -28,6 +28,10 @@
         {{ committed.observations }}
       </p>
       <p>
+        <b>Needs:</b>
+        {{ committed.needs }}
+      </p>
+      <p>
         <b>Teamsize:</b>
         {{ committed.teamsize }}
       </p>
@@ -75,7 +79,7 @@ export default {
   created: function () {
     axios.get("http://localhost:3000/users/" + this.current_user_id).then((response) => {
       this.user = response.data;
-      console.log(response.data.users);
+      console.log("prints user", this.user);
     });
     this.indexCommitteds();
   },
