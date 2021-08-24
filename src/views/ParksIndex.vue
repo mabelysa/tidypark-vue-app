@@ -116,7 +116,7 @@ export default {
         // Replace YOUR_STYLE_URL with your style URL.
         style: "mapbox://styles/mabelysa/cksorx77f1yyd17n4f9mye5ty",
         center: [-73.98553821722048, 40.743916217262516],
-        zoom: 9.0,
+        zoom: 9.25,
       });
       console.log("this is the map", map);
 
