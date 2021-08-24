@@ -24,6 +24,14 @@
 <style></style>
 
 <script>
+import swal from "sweetalert";
+swal("Welcome to Tidy Park!");
+swal({
+  title: "-Welcome to Tidy Park-",
+  text: "Let's get ready to tackle some mess!",
+  icon: "success",
+  button: "Right On!!",
+});
 export default {
   data: function () {
     return {

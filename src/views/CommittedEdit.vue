@@ -79,6 +79,8 @@
 
 <script>
 import axios from "axios";
+import swal from "sweetalert";
+
 export default {
   data: function () {
     return {
@@ -103,6 +105,7 @@ export default {
         .then((response) => {
           console.log(response.data);
           this.$router.push(`/committeds/${response.data.id}`);
+          swal("Updated!", "Your committment has been updated!", "success");
         })
         .catch((error) => {
           console.log("updated committed create error", error.response);
@@ -113,6 +116,19 @@ export default {
       axios.delete("/committeds/" + committed.id).then((response) => {
         console.log("Committment Deleted", response.data);
         this.$router.push("/committeds");
+        // swal({
+        //   title: "Are you sure?",
+        //   text: "Are you sure that you want to delete this commitment?",
+        //   icon: "warning",
+        //   dangerMode: true,
+        // }).then((willDelete) => {
+        //   if (willDelete) {
+        //     swal("Deleted!", "Your committment has been deleted!", "success");
+        //   }
+        // });
+        swal("Deleted!", "Your committment has been deleted!", "success", {
+          buttons: "Return to your account!",
+        });
       });
     },
   },
