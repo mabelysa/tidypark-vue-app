@@ -166,12 +166,12 @@
         <b>Size:</b>
         {{ park.size }}
       </p>
+      <ul>
+        <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
+      </ul>
     </div>
     <div class="committed-new">
       <form v-on:submit.prevent="createCommitted()">
-        <ul>
-          <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
-        </ul>
         <div>
           <label><b>Observations:</b></label>
           <input type="text" v-model="newCommittedParams.observations" />
@@ -239,6 +239,7 @@ export default {
       errors: [],
       park: {},
       newCommittedParams: {},
+      status: "",
     };
   },
   created: function () {
@@ -259,6 +260,7 @@ export default {
         })
         .catch((error) => {
           console.log("committed create error", error.response);
+          this.status = error.response.status;
           this.errors = error.response.data.errors;
         });
     },
