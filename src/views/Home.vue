@@ -50,6 +50,37 @@
           </div>
         </section>
         <!-- End Call To Action Section -->
+        <!-- ======= Clients Section ======= -->
+        <section id="clients">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-2">
+                <img src="assets/img/clients/client-1.png" alt="" />
+              </div>
+
+              <div class="col-md-2">
+                <img src="assets/img/clients/client-3.png" alt="" />
+              </div>
+
+              <div class="col-md-2">
+                <img src="assets/img/clients/client-4.png" alt="" />
+              </div>
+
+              <div class="col-md-2">
+                <img src="assets/img/clients/client-5.png" alt="" />
+              </div>
+
+              <div class="col-md-2">
+                <img src="assets/img/clients/client-6.png" alt="" />
+              </div>
+              <!-- <span style="display: inline-block; width: 2"></span> -->
+              <div class="col-md-2">
+                <img src="assets/img/clients/client-2.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- End Clients Section -->
         <!-- ======= Contact Section ======= -->
         <section id="contact">
           <div class="container">
