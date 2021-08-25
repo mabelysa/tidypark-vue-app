@@ -7,61 +7,73 @@
     <section id="more-features" class="section-bg">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title">Welcome to Your Account, {{ user.first_name }}!</h2>
+          <h1 class="section-title">Welcome to Your Account, {{ user.first_name }}!</h1>
           <span class="section-divider"></span>
           <h3>{{ message2 }}</h3>
           <p class="section-description">
-            {{ message3 }}
+            <b>{{ message3 }}</b>
             <br />
-            {{ message4 }}
+            <b>{{ message4 }}</b>
           </p>
-          <router-link v-bind:to="`/users/${user.id}/edit`">
+          <!-- <router-link v-bind:to="`/users/${user.id}/edit`">
             <button>Edit Contact Info</button>
-          </router-link>
+          </router-link> -->
           <div v-for="(committed, index) in committeds" :key="committed.id">
             <h2>{{ committed.park.name }} - {{ index + 1 }}</h2>
-            <p>
+            <span>
               <b>Borough:</b>
               {{ committed.park.borough }}
-            </p>
-            <p>
+            </span>
+            <br />
+            <span>
               <b>Address:</b>
               {{ committed.park.address }}
-            </p>
-            <p>
+            </span>
+            <br />
+            <span>
               <b>Size:</b>
               {{ committed.park.size }}
-            </p>
-            <p>
+            </span>
+            <br />
+            <span>
               <b>Observations:</b>
               {{ committed.observations }}
-            </p>
-            <p>
+            </span>
+            <br />
+            <span>
               <b>Needs:</b>
               {{ committed.needs }}
-            </p>
-            <p>
+            </span>
+            <br />
+            <span>
               <b>Teamsize:</b>
               {{ committed.teamsize }}
-            </p>
-            <p>
+            </span>
+            <br />
+            <span>
               <b>Tentative Date:</b>
               {{ committed.tentativedate }}
-            </p>
-            <p>
+            </span>
+            <br />
+            <span>
               <b>Experience:</b>
               {{ committed.experience }}
-            </p>
-            <p>
+            </span>
+            <br />
+            <span>
               <b>Reason:</b>
               {{ committed.reason }}
-            </p>
+            </span>
+            <br />
             <router-link v-bind:to="`/committeds/${committed.id}`">
               <img v-bind:src="committed.park.image_url" alt="committed.park.image_url" />
             </router-link>
           </div>
         </div>
+        <br />
         <router-link to="/parks"><b>Back to all Parks!</b></router-link>
+        <br />
+        <br />
         <p>*pictures taken from nycgovparks.gov*</p>
 
         <!-- <div class="row gy-4">
@@ -172,8 +184,33 @@
     <router-link to="/parks"><b>Back to all Parks!</b></router-link>
     <p>*pictures taken from nycgovparks.gov*</p>
     OLD CODE -->
+    <!-- ======= Call To Action Section ======= -->
+    <section id="call-to-action">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-9 text-center text-lg-start">
+            <h3 class="cta-title"></h3>
+            <p class="cta-text"></p>
+          </div>
+          <div class="col-lg-3 cta-btn-container text-center"></div>
+        </div>
+      </div>
+    </section>
+    <!-- End Call To Action Section -->
+    <div class="garbagebin5" dat-aos-delay="100">
+      <img src="assets/img/clients/client-1.png" alt="garbagebin5" />
+    </div>
   </div>
 </template>
+
+<style>
+.garbagebin5 {
+  position: fixed;
+  top: 19%;
+  left: 4%;
+  transform: translate(-50%, -50%);
+}
+</style>
 
 <script>
 import axios from "axios";

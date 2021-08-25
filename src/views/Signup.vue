@@ -108,7 +108,7 @@
 }
 .garbagebin1 {
   position: fixed;
-  top: 21%;
+  top: 19%;
   left: 4%;
   transform: translate(-50%, -50%);
 }
