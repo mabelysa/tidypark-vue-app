@@ -87,6 +87,23 @@
       </div>
     </section>
     <!-- End More Features Section -->
+    <!-- ======= Call To Action Section ======= -->
+    <section id="call-to-action">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-9 text-center text-lg-start">
+            <h3 class="cta-title"></h3>
+            <p class="cta-text"></p>
+          </div>
+          <div class="col-lg-3 cta-btn-container text-center"></div>
+        </div>
+      </div>
+    </section>
+    <!-- End Call To Action Section -->
+    <div class="garbagebin3" dat-aos-delay="100">
+      <img src="assets/img/clients/client-2.png" alt="garbagebin3" />
+    </div>
+    <!-- OLD CODE -->
     <!-- <h1>{{ message }}</h1>
     <div id="map"></div> -->
     <!-- <button v-on:click="mostRequested()">Most Requested Park</button> -->
@@ -116,6 +133,7 @@
       </router-link>
     </div>
     <p>*pictures taken from nycgovparks.gov*</p> -->
+    <!-- OLD CODE -->
   </div>
 </template>
 
@@ -132,6 +150,12 @@ body {
 }
 .section-header {
   text-align: center;
+}
+.garbagebin3 {
+  position: fixed;
+  top: 18%;
+  left: 4%;
+  transform: translate(-50%, -50%);
 }
 </style>
 
