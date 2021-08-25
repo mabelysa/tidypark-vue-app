@@ -14,37 +14,39 @@
             Input your information below.
           </p>
         </div>
-        <form v-on:submit.prevent="submit()">
-          <ul>
-            <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
-          </ul>
-          <div>
-            <label>First Name:</label>
-            <input type="text" v-model="newUserParams.first_name" />
-          </div>
-          <div>
-            <label>Last Name:</label>
-            <input type="text" v-model="newUserParams.last_name" />
-          </div>
-          <div>
-            <label>Email Address:</label>
-            <input type="email" v-model="newUserParams.email_address" />
-          </div>
-          <div>
-            <label>Phone Number:</label>
-            <input type="text" v-model="newUserParams.phone_number" />
-          </div>
-          <div>
-            <label>Password:</label>
-            <input type="password" v-model="newUserParams.password" />
-          </div>
-          <div>
-            <label>Password confirmation:</label>
-            <input type="password" v-model="newUserParams.password_confirmation" />
-          </div>
-          <input type="submit" value="Submit" />
-        </form>
-
+        <div class="form">
+          <form v-on:submit.prevent="submit()">
+            <ul>
+              <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
+            </ul>
+            <div>
+              <label>First Name:</label>
+              <input type="text" v-model="newUserParams.first_name" />
+            </div>
+            <div>
+              <label>Last Name:</label>
+              <input type="text" v-model="newUserParams.last_name" />
+            </div>
+            <div>
+              <label>Email Address:</label>
+              <input type="email" v-model="newUserParams.email_address" />
+            </div>
+            <div>
+              <label>Phone Number:</label>
+              <input type="text" v-model="newUserParams.phone_number" />
+            </div>
+            <div>
+              <label>Password:</label>
+              <input type="password" v-model="newUserParams.password" />
+            </div>
+            <div>
+              <label>Password confirmation:</label>
+              <input type="password" v-model="newUserParams.password_confirmation" />
+            </div>
+            <input type="submit" value="Submit" />
+          </form>
+        </div>
+        <br />
         <div class="row">
           <div class="col-lg-6 about-img" dat-aos-delay="100">
             <img src="assets/img/about-img.jpg" alt="" />
@@ -68,16 +70,36 @@
                 Choose a park and input your observations!
               </li>
             </ul>
-            <p>Account creation in progress...</p>
+            <p>Progress status: 1/3...</p>
           </div>
         </div>
       </div>
     </section>
     <!-- End About Section -->
+    <div class="garbagebin" dat-aos-delay="100">
+      <img src="assets/img/clients/client-1.png" alt="garbagebin" />
+    </div>
   </div>
 </template>
 
-<style></style>
+<style>
+.form {
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  text-align: center;
+  /* position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+}
+.garbagebin {
+  position: fixed;
+  top: 20%;
+  left: 4%;
+  transform: translate(-50%, -50%);
+}
+</style>
 
 <script>
 import axios from "axios";
