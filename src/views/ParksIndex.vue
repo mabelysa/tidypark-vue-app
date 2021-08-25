@@ -3,12 +3,12 @@
     <!-- ======= More Features Section ======= -->
     <br />
     <br />
-    <br />
     <section id="more-features" class="section-bg">
       <div class="container">
         <div class="section-header">
           <h3 class="section-title">{{ message }}</h3>
           <div id="map"></div>
+          <br />
           <span class="section-divider"></span>
           <p class="section-description">Above are the locations to the parks located in New York City.</p>
           <i class="bi bi-bar-chart"></i>
@@ -38,6 +38,7 @@
               <button>Commit to {{ park.name }}!</button>
             </router-link>
           </div>
+          <br />
           <p>*pictures taken from nycgovparks.gov*</p>
         </div>
 
