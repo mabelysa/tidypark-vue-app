@@ -12,11 +12,11 @@
         <nav id="navbar" class="navbar">
           <ul>
             <li><a class="nav-link scrollto active" href="/">Home</a></li>
-            <li><a class="nav-link scrollto" href="/signup">Sign Up</a></li>
-            <li><a class="nav-link scrollto" href="/login">Login</a></li>
+            <li v-if="!isLoggedIn()" class="nav-item"><a class="nav-link scrollto" href="/signup">Sign Up</a></li>
+            <li v-if="!isLoggedIn()" class="nav-item"><a class="nav-link scrollto" href="/login">Login</a></li>
             <li><a class="nav-link scrollto" href="/parks">NYC Parks</a></li>
             <!-- <li><a class="nav-link scrollto" href="#committeds">My Account</a></li> -->
-            <li><a class="nav-link scrollto" href="/logout">Logout</a></li>
+            <li v-if="isLoggedIn()" class="nav-item"><a class="nav-link scrollto" href="/logout">Logout</a></li>
             <li class="dropdown">
               <a href="#">
                 <span>My Account</span>
