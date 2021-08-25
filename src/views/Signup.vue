@@ -76,8 +76,8 @@
       </div>
     </section>
     <!-- End About Section -->
-    <div class="garbagebin" dat-aos-delay="100">
-      <img src="assets/img/clients/client-1.png" alt="garbagebin" />
+    <div class="garbagebin1" dat-aos-delay="100">
+      <img src="assets/img/clients/client-1.png" alt="garbagebin1" />
     </div>
   </div>
 </template>
@@ -93,9 +93,9 @@
   left: 50%;
   transform: translate(-50%, -50%); */
 }
-.garbagebin {
+.garbagebin1 {
   position: fixed;
-  top: 20%;
+  top: 18%;
   left: 4%;
   transform: translate(-50%, -50%);
 }

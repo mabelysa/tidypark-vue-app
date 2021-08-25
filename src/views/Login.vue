@@ -47,8 +47,8 @@
       </div>
     </section>
     <!-- End Advanced Featuress Section -->
-    <div class="garbagebin" dat-aos-delay="100">
-      <img src="assets/img/clients/client-1.png" alt="garbagebin" />
+    <div class="garbagebin2" dat-aos-delay="100">
+      <img src="assets/img/clients/client-2.png" alt="garbagebin2" />
     </div>
   </div>
 </template>
@@ -58,7 +58,7 @@
   top: 50%;
   left: 50%;
 }
-.garbagebin {
+.garbagebin2 {
   position: fixed;
   top: 18%;
   left: 97%;
