@@ -20,46 +20,46 @@
           </router-link>
           <div v-for="(committed, index) in committeds" :key="committed.id">
             <h2>{{ committed.park.name }} - {{ index + 1 }}</h2>
+            <p>
+              <b>Borough:</b>
+              {{ committed.park.borough }}
+            </p>
+            <p>
+              <b>Address:</b>
+              {{ committed.park.address }}
+            </p>
+            <p>
+              <b>Size:</b>
+              {{ committed.park.size }}
+            </p>
+            <p>
+              <b>Observations:</b>
+              {{ committed.observations }}
+            </p>
+            <p>
+              <b>Needs:</b>
+              {{ committed.needs }}
+            </p>
+            <p>
+              <b>Teamsize:</b>
+              {{ committed.teamsize }}
+            </p>
+            <p>
+              <b>Tentative Date:</b>
+              {{ committed.tentativedate }}
+            </p>
+            <p>
+              <b>Experience:</b>
+              {{ committed.experience }}
+            </p>
+            <p>
+              <b>Reason:</b>
+              {{ committed.reason }}
+            </p>
+            <router-link v-bind:to="`/committeds/${committed.id}`">
+              <img v-bind:src="committed.park.image_url" alt="committed.park.image_url" />
+            </router-link>
           </div>
-          <p>
-            <b>Borough:</b>
-            {{ committed.park.borough }}
-          </p>
-          <p>
-            <b>Address:</b>
-            {{ committed.park.address }}
-          </p>
-          <p>
-            <b>Size:</b>
-            {{ committed.park.size }}
-          </p>
-          <p>
-            <b>Observations:</b>
-            {{ committed.observations }}
-          </p>
-          <p>
-            <b>Needs:</b>
-            {{ committed.needs }}
-          </p>
-          <p>
-            <b>Teamsize:</b>
-            {{ committed.teamsize }}
-          </p>
-          <p>
-            <b>Tentative Date:</b>
-            {{ committed.tentativedate }}
-          </p>
-          <p>
-            <b>Experience:</b>
-            {{ committed.experience }}
-          </p>
-          <p>
-            <b>Reason:</b>
-            {{ committed.reason }}
-          </p>
-          <router-link v-bind:to="`/committeds/${committed.id}`">
-            <img v-bind:src="committed.park.image_url" alt="committed.park.image_url" />
-          </router-link>
         </div>
         <router-link to="/parks"><b>Back to all Parks!</b></router-link>
         <p>*pictures taken from nycgovparks.gov*</p>
