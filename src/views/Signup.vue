@@ -76,6 +76,19 @@
       </div>
     </section>
     <!-- End About Section -->
+    <!-- ======= Call To Action Section ======= -->
+    <section id="call-to-action">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-9 text-center text-lg-start">
+            <h3 class="cta-title"></h3>
+            <p class="cta-text"></p>
+          </div>
+          <div class="col-lg-3 cta-btn-container text-center"></div>
+        </div>
+      </div>
+    </section>
+    <!-- End Call To Action Section -->
     <div class="garbagebin1" dat-aos-delay="100">
       <img src="assets/img/clients/client-1.png" alt="garbagebin1" />
     </div>
