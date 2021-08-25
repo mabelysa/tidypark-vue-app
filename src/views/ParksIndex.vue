@@ -103,7 +103,7 @@
     </section>
     <!-- End Call To Action Section -->
     <div class="garbagebin3" dat-aos-delay="100">
-      <img src="assets/img/clients/client-2.png" alt="garbagebin3" />
+      <img src="assets/img/clients/client-1.png" alt="garbagebin3" />
     </div>
     <!-- OLD CODE -->
     <!-- <h1>{{ message }}</h1>

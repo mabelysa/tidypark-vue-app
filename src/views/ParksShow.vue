@@ -1,5 +1,29 @@
 <template>
   <div class="parks-show">
+    <!-- ======= Gallery Section ======= -->
+    <br />
+    <br />
+    <br />
+    <section id="gallery">
+      <div class="container-fluid">
+        <div class="section-header">
+          <h3 class="section-title">Interested in This Park?</h3>
+          <span class="section-divider"></span>
+          <p class="section-description">Commit to this park by clicking the button below.</p>
+        </div>
+        <!-- <div class="row no-gutters">
+          <div class="col-lg-4 col-md-6">
+            <div class="gallery-item">
+              <a href="assets/img/gallery/gallery-1.jpg" data-gall="portfolioGallery" class="gallery-lightbox">
+                <img src="assets/img/gallery/gallery-1.jpg" alt="" />
+              </a>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </section>
+    <!-- End Gallery Section -->
+    <!-- OLD CODE -->
     <div class="container">
       <p><img v-bind:src="park.image_url" alt="park.image_url" /></p>
       <p v-if="1 == park.id">
@@ -179,12 +203,12 @@
         <div>
           <label><b>Needs:</b></label>
           <textarea id="needs" input type="text" v-model="newCommittedParams.needs"></textarea>
-          <!-- <small
-            v-if="newCommittedParams.needs.length > 50 && newCommittedParams.needs.length < 100"
+          <small
+            v-if="newCommittedParams.needs.length > 30 && newCommittedParams.needs.length < 100"
             class="text-danger"
           >
             There are {{ 100 - newCommittedParams.needs.length }} characters remaining.
-          </small> -->
+          </small>
         </div>
         <div>
           <label>
@@ -226,10 +250,42 @@
         <router-link to="/parks">Back to all Parks!</router-link>
       </form>
     </div>
+    <!-- ======= Call To Action Section ======= -->
+    <section id="call-to-action">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-9 text-center text-lg-start">
+            <h3 class="cta-title"></h3>
+            <p class="cta-text"></p>
+          </div>
+          <div class="col-lg-3 cta-btn-container text-center"></div>
+        </div>
+      </div>
+    </section>
+    <!-- End Call To Action Section -->
     <!-- <li v-if="$parent.getUserId() == park.user_id"> -->
     <!-- </li> -->
+    <!-- OLD CODE -->
+    <div class="garbagebin4" dat-aos-delay="100">
+      <img src="assets/img/clients/client-2.png" alt="garbagebin4" />
+    </div>
   </div>
 </template>
+
+<style>
+.container {
+  text-align: center;
+}
+.committed-new {
+  text-align: center;
+}
+.garbagebin4 {
+  position: fixed;
+  top: 22%;
+  left: 96%;
+  transform: translate(-50%, -50%);
+}
+</style>
 
 <script>
 import axios from "axios";
@@ -238,7 +294,7 @@ export default {
     return {
       errors: [],
       park: {},
-      newCommittedParams: {},
+      newCommittedParams: { needs: "" },
       status: "",
     };
   },
