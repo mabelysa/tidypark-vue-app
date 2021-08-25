@@ -1,9 +1,96 @@
 <template>
   <div class="parks-index">
-    <h1>{{ message }}</h1>
-    <div id="map"></div>
+    <!-- ======= More Features Section ======= -->
+    <br />
+    <br />
+    <br />
+    <section id="more-features" class="section-bg">
+      <div class="container">
+        <div class="section-header">
+          <h3 class="section-title">{{ message }}</h3>
+          <div id="map"></div>
+          <span class="section-divider"></span>
+          <p class="section-description">Above are the locations to the parks located in New York City.</p>
+          <h1>Next Park to Clean Is...{{ mostRequestedPark }}</h1>
+          View By Borough, Name or Size:
+          <input v-model="searchFilter" />
+          <div v-for="(park, index) in filterBy(parks, searchFilter, 'borough', 'name', 'size')" :key="park.id">
+            <br />
+            <h2>{{ park.name }} - {{ index + 1 }}</h2>
+            <p>
+              <b>Borough:</b>
+              {{ park.borough }}
+            </p>
+            <p>
+              <b>Address:</b>
+              {{ park.address }}
+            </p>
+            <!-- <p>All Info: {{ park }}</p> -->
+            <p>
+              <b>Size:</b>
+              {{ park.size }}
+            </p>
+            <img v-bind:src="park.image_url" alt="park.image_url" />
+            <br />
+            <router-link v-bind:to="`/parks/${park.id}`">
+              <button>Commit to {{ park.name }}!</button>
+            </router-link>
+          </div>
+          <p>*pictures taken from nycgovparks.gov*</p>
+        </div>
+
+        <!-- <div class="row gy-4">
+          <div class="col-lg-6">
+            <div class="box">
+              <div class="icon"><i class="bi bi-briefcase"></i></div>
+              <h4 class="title"><a href="">Lorem Ipsum</a></h4>
+              <p class="description">
+                Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate
+                non provident etiro rabeta lingo.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="box">
+              <div class="icon"><i class="bi bi-card-checklist"></i></div>
+              <h4 class="title"><a href="">Dolor Sitema</a></h4>
+              <p class="description">
+                Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad
+                limino ata nodera clas.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="box">
+              <div class="icon"><i class="bi bi-bar-chart"></i></div>
+              <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
+              <p class="description">
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur
+                trinige zareta lobur trade.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="box">
+              <div class="icon"><i class="bi bi-binoculars"></i></div>
+              <h4 class="title"><a href="">Magni Dolores</a></h4>
+              <p class="description">
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                laborum rideta zanox satirente madera
+              </p>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </section>
+    <!-- End More Features Section -->
+    <!-- <h1>{{ message }}</h1>
+    <div id="map"></div> -->
     <!-- <button v-on:click="mostRequested()">Most Requested Park</button> -->
-    <h1>Next Park to Clean Is...{{ mostRequestedPark }}</h1>
+    <!-- <h1>Next Park to Clean Is...{{ mostRequestedPark }}</h1>
     View By Borough, Name or Size:
     <input v-model="searchFilter" />
     <div v-for="(park, index) in filterBy(parks, searchFilter, 'borough', 'name', 'size')" :key="park.id">
@@ -16,9 +103,9 @@
       <p>
         <b>Address:</b>
         {{ park.address }}
-      </p>
-      <!-- <p>All Info: {{ park }}</p> -->
-      <p>
+      </p> -->
+    <!-- <p>All Info: {{ park }}</p> -->
+    <!-- <p>
         <b>Size:</b>
         {{ park.size }}
       </p>
@@ -28,7 +115,7 @@
         <button>Commit to {{ park.name }}!</button>
       </router-link>
     </div>
-    <p>*pictures taken from nycgovparks.gov*</p>
+    <p>*pictures taken from nycgovparks.gov*</p> -->
   </div>
 </template>
 
@@ -42,6 +129,9 @@ body {
   height: 500px;
   margin-left: auto;
   margin-right: auto;
+}
+.section-header {
+  text-align: center;
 }
 </style>
 
