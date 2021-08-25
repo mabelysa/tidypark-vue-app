@@ -7,9 +7,11 @@
           <br />
           <br />
           <h2>{{ message1 }}</h2>
-          <p>
-            <i>{{ message2 }}</i>
-          </p>
+          <h3>
+            <b>
+              <i>{{ message2 }}</i>
+            </b>
+          </h3>
           <p>{{ message3 }}</p>
           <p>{{ message4 }}</p>
           <a href="/signup" class="btn-get-started scrollto">Sign Up Here</a>
@@ -147,6 +149,9 @@
         </div>
       </section>
       <!-- End Contact Section -->
+      <a href="/" class="back-to-top d-flex align-items-center justify-content-center">
+        <i class="bi bi-chevron-up"></i>
+      </a>
       <!-- OLD HOME CODE
       <h1>{{ message1 }}</h1>
       <h2>
