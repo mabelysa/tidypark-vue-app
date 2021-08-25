@@ -6,8 +6,6 @@
         <div class="hero-text">
           <br />
           <br />
-          <br />
-          <br />
           <h2>{{ message1 }}</h2>
           <h1>
             <b>
@@ -16,19 +14,19 @@
           </h1>
           <p>{{ message3 }}</p>
           <p>{{ message4 }}</p>
-          <a href="#signup" class="btn-get-started scrollto">Sign Up Here</a>
+          <a href="/signup" class="btn-get-started scrollto">Sign Up Here</a>
         </div>
 
         <div class="product-screens">
-          <div class="product-screen-1" data-aos="fade-up" data-aos-delay="400">
+          <div class="product-screen-1" data-aos-delay="400">
             <img src="assets/img/product-screen-1.png" alt="" />
           </div>
 
-          <div class="product-screen-2" data-aos="fade-up" data-aos-delay="200">
+          <div class="product-screen-2" data-aos-delay="200">
             <img src="assets/img/product-screen-2.png" alt="" />
           </div>
 
-          <div class="product-screen-3" data-aos="fade-up">
+          <div class="product-screen-3">
             <img src="assets/img/product-screen-3.png" alt="" />
           </div>
         </div>
@@ -71,10 +69,10 @@ swal({
 export default {
   data: function () {
     return {
-      message1: "Welcome to Tidy Park!",
+      message1: "Hi...Welcome to Tidy Park!",
       message2: "Go Green or Go Home!",
       message3: "Hitting the streets, to keep New York City parks neat!",
-      message4: "Login to select which parks need some TLC ;)",
+      message4: "Create an account & login to select which parks need some TLC ;)",
     };
   },
   created: function () {},
