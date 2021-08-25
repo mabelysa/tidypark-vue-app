@@ -537,7 +537,7 @@ section {
 .section-header .section-description {
   text-align: center;
   padding-bottom: 40px;
-  color: #777;
+  color: rgb(0, 0, 0);
   font-style: italic;
 }
 
@@ -917,8 +917,8 @@ section {
 
 #more-features p {
   font-size: 14px;
-  margin-left: 100px;
-  margin-bottom: 0;
+  /* margin-left: 100px;
+  margin-bottom: 0; */
   line-height: 24px;
 }
 
