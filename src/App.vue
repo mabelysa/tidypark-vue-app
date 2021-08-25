@@ -104,13 +104,18 @@
       </div>
     </footer>
     <!-- End  Footer -->
-    <a href="" class="back-to-top d-flex align-items-center justify-content-center">
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center">
       <i class="bi bi-chevron-up"></i>
     </a>
   </div>
 </template>
 
-<style></style>
+<style>
+.back-to-top {
+  visibility: visible;
+  opacity: 100;
+}
+</style>
 
 <script>
 // import axios from "axios";

@@ -212,7 +212,7 @@
 
 <script>
 import swal from "sweetalert";
-swal("Welcome to Tidy Park!");
+// swal("Welcome to Tidy Park!");
 swal({
   title: "-Welcome to Tidy Park-",
   text: "Let's get ready to tackle some mess!",
