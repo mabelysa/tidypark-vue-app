@@ -16,7 +16,7 @@
             <b>{{ message4 }}</b>
             <br />
             <br />
-            Don't forget to post your park cleanup on social media using the hashtags
+            Don't forget to post your park cleanup on social media using the hashtag
             <br />
             <b>#TidyPark</b>
             and/or
