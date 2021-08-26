@@ -208,7 +208,11 @@
   </div>
 </template>
 
-<style></style>
+<style>
+.contact-about {
+  text-align: left;
+}
+</style>
 
 <script>
 // import swal from "sweetalert";
