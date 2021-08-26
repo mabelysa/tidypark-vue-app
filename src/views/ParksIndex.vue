@@ -19,25 +19,29 @@
           <div v-for="(park, index) in filterBy(parks, searchFilter, 'borough', 'name', 'size')" :key="park.id">
             <br />
             <h2>{{ park.name }} - {{ index + 1 }}</h2>
-            <p>
+            <span>
               <b>Borough:</b>
               {{ park.borough }}
-            </p>
-            <p>
+            </span>
+            <br />
+            <span>
               <b>Address:</b>
               {{ park.address }}
-            </p>
+            </span>
+            <br />
             <!-- <p>All Info: {{ park }}</p> -->
-            <p>
+            <span>
               <b>Size:</b>
               {{ park.size }}
-            </p>
+            </span>
+            <br />
             <img v-bind:src="park.image_url" alt="park.image_url" />
             <br />
             <router-link v-bind:to="`/parks/${park.id}`">
               <button>Commit to {{ park.name }}!</button>
             </router-link>
           </div>
+          <br />
           <br />
           <p>*pictures taken from nycgovparks.gov*</p>
         </div>
