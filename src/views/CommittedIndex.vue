@@ -22,6 +22,10 @@
             and/or
             <b>#BinIt</b>
             during park cleanup day!
+            <br />
+            <b>Which park is next in line for clean up?</b>
+            <br />
+            Check on the NYC parks page and get pumped!
           </p>
           <!-- <router-link v-bind:to="`/users/${user.id}/edit`">
             <button>Edit Contact Info</button>
