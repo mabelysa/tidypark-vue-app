@@ -71,6 +71,15 @@
   top: 50%;
   left: 50%;
 }
+
+.col-12 {
+  text-align: left;
+}
+
+/* .submitbutton {
+  text-align: center;
+} */
+
 .garbagebin2 {
   position: fixed;
   top: 20%;
