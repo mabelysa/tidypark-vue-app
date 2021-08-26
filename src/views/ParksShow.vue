@@ -256,6 +256,7 @@
         <br />
         <br />
         <router-link to="/parks">Back to all Parks!</router-link>
+        <br />
       </form>
     </div>
     <!-- ======= Call To Action Section ======= -->
