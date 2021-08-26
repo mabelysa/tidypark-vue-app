@@ -3,35 +3,43 @@
     <div class="container">
       <p><img v-bind:src="park.image_url" alt="park.image_url" /></p>
       <h2>{{ park.name }}</h2>
-      <p>
+      <span>
         <b>Borough:</b>
         {{ park.borough }}
-      </p>
-      <p>
+      </span>
+      <br />
+      <span>
         <b>Address:</b>
         {{ park.address }}
-      </p>
-      <p>
+      </span>
+      <br />
+      <span>
         <b>Size:</b>
         {{ park.size }}
-      </p>
+      </span>
       <form v-on:submit.prevent="updateCommitted()">
         <ul>
           <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
         </ul>
         <div>
           <label><b>Observations:</b></label>
-          <input type="text" v-model="currentCommittedParams.observations" />
+          <textarea id="observations" input type="text" v-model="currentCommittedParams.observations"></textarea>
+          <small
+            v-if="currentCommittedParams.observations.length > 20 && currentCommittedParams.observations.length < 100"
+            class="text-danger"
+          >
+            There are {{ 100 - currentCommittedParams.observations.length }} characters remaining.
+          </small>
         </div>
         <div>
           <label><b>Needs:</b></label>
           <textarea id="needs" input type="text" v-model="currentCommittedParams.needs"></textarea>
-          <!-- <small
-            v-if="newCommittedParams.needs.length > 50 && newCommittedParams.needs.length < 100"
+          <small
+            v-if="currentCommittedParams.needs.length > 20 && currentCommittedParams.needs.length < 100"
             class="text-danger"
           >
-            There are {{ 100 - newCommittedParams.needs.length }} characters remaining.
-          </small> -->
+            There are {{ 100 - currentCommittedParams.needs.length }} characters remaining.
+          </small>
         </div>
         <div>
           <label><b>Team Size:</b></label>
@@ -70,6 +78,7 @@
       <br />
       <br />
       <router-link v-bind:to="`/committeds/${committed.id}`">Back to {{ park.name }} !</router-link>
+      <br />
     </div>
     <!-- <li v-if="$parent.getUserId() == park.user_id"> -->
     <!-- </li> -->
@@ -86,7 +95,7 @@ export default {
     return {
       errors: [],
       park: {},
-      currentCommittedParams: {},
+      currentCommittedParams: { needs: "", observations: "" },
       committed: {},
     };
   },

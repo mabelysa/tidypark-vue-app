@@ -153,38 +153,46 @@
         />
       </p>
       <h2>{{ park.name }}</h2>
-      <p>
+      <span>
         <b>Borough:</b>
         {{ park.borough }}
-      </p>
-      <p>
+      </span>
+      <br />
+      <span>
         <b>Size:</b>
         {{ park.size }}
-      </p>
-      <p>
+      </span>
+      <br />
+      <span>
         <b>Observations:</b>
         {{ committed.observations }}
-      </p>
-      <p>
+      </span>
+      <br />
+      <span>
         <b>Needs:</b>
         {{ committed.needs }}
-      </p>
-      <p>
+      </span>
+      <br />
+      <span>
         <b>Teamsize:</b>
         {{ committed.teamsize }}
-      </p>
-      <p>
+      </span>
+      <br />
+      <span>
         <b>Tentative Date:</b>
         {{ committed.tentativedate }}
-      </p>
-      <p>
+      </span>
+      <br />
+      <span>
         <b>Experience:</b>
         {{ committed.experience }}
-      </p>
-      <p>
+      </span>
+      <br />
+      <span>
         <b>Reason:</b>
         {{ committed.reason }}
-      </p>
+      </span>
+      <br />
       <!-- <li v-if="$parent.getUserId() == post.user_id"> -->
       <router-link v-bind:to="`/committeds/${committed.id}/edit`"><button>Edit Commitment</button></router-link>
       <!-- </li> -->

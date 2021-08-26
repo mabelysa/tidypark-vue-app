@@ -178,18 +178,20 @@
       </p>
       <!-- <div id="map"></div> -->
       <h2>{{ park.name }}</h2>
-      <p>
+      <span>
         <b>Borough:</b>
         {{ park.borough }}
-      </p>
-      <p>
+      </span>
+      <br />
+      <span>
         <b>Address:</b>
         {{ park.address }}
-      </p>
-      <p>
+      </span>
+      <br />
+      <span>
         <b>Size:</b>
         {{ park.size }}
-      </p>
+      </span>
       <ul>
         <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
       </ul>
@@ -198,13 +200,19 @@
       <form v-on:submit.prevent="createCommitted()">
         <div>
           <label><b>Observations:</b></label>
-          <input type="text" v-model="newCommittedParams.observations" />
+          <textarea id="observations" input type="text" v-model="newCommittedParams.observations"></textarea>
+          <small
+            v-if="newCommittedParams.observations.length > 20 && newCommittedParams.observations.length < 100"
+            class="text-danger"
+          >
+            There are {{ 100 - newCommittedParams.observations.length }} characters remaining.
+          </small>
         </div>
         <div>
           <label><b>Needs:</b></label>
           <textarea id="needs" input type="text" v-model="newCommittedParams.needs"></textarea>
           <small
-            v-if="newCommittedParams.needs.length > 30 && newCommittedParams.needs.length < 100"
+            v-if="newCommittedParams.needs.length > 20 && newCommittedParams.needs.length < 100"
             class="text-danger"
           >
             There are {{ 100 - newCommittedParams.needs.length }} characters remaining.
@@ -294,7 +302,7 @@ export default {
     return {
       errors: [],
       park: {},
-      newCommittedParams: { needs: "" },
+      newCommittedParams: { needs: "", observations: "" },
       status: "",
     };
   },
