@@ -70,7 +70,7 @@
                 Choose a park and input your observations!
               </li>
             </ul>
-            <p>Progress status: 1/3...</p>
+            <p>Progress status: 1/3 ...</p>
           </div>
         </div>
       </div>
