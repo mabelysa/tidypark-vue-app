@@ -212,6 +212,9 @@
 .contact-about {
   text-align: left;
 }
+.info {
+  text-align: left;
+}
 </style>
 
 <script>
