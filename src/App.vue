@@ -4,7 +4,7 @@
     <header id="header" class="fixed-top d-flex align-items-center">
       <div class="container d-flex justify-content-between align-items-center">
         <div id="logo">
-          <h1><a href="index.html">Avilon</a></h1>
+          <h1><a href="index.html">Tidy Park</a></h1>
           <!-- Uncomment below if you prefer to use an image logo -->
           <!-- <a href="index.html"><img src="assets/img/logo.png" alt=""></a> -->
         </div>
@@ -12,8 +12,8 @@
         <nav id="navbar" class="navbar">
           <ul>
             <li><a class="nav-link scrollto active" href="/">Home</a></li>
-            <li v-if="!isLoggedIn()" class="nav-item"><a class="nav-link scrollto" href="/signup">Sign Up</a></li>
-            <li v-if="!isLoggedIn()" class="nav-item"><a class="nav-link scrollto" href="/login">Login</a></li>
+            <!-- <li v-if="!isLoggedIn()" class="nav-item"><a class="nav-link scrollto" href="/signup">Sign Up</a></li>
+            <li v-if="!isLoggedIn()" class="nav-item"><a class="nav-link scrollto" href="/login">Login</a></li> -->
             <li><a class="nav-link scrollto" href="/parks">NYC Parks</a></li>
             <!-- <li><a class="nav-link scrollto" href="#committeds">My Account</a></li> -->
             <li v-if="isLoggedIn()" class="nav-item"><a class="nav-link scrollto" href="/logout">Logout</a></li>
@@ -23,6 +23,8 @@
                 <i class="bi bi-chevron-down"></i>
               </a>
               <ul>
+                <li v-if="!isLoggedIn()" class="nav-item"><a class="nav-link scrollto" href="/signup">Sign Up</a></li>
+                <li v-if="!isLoggedIn()" class="nav-item"><a class="nav-link scrollto" href="/login">Login</a></li>
                 <li><a href="/committeds">My Parks</a></li>
                 <!-- <li class="dropdown">
                   <a href="#">

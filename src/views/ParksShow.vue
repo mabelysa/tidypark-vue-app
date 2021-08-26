@@ -267,7 +267,7 @@
     <!-- </li> -->
     <!-- OLD CODE -->
     <div class="garbagebin4" dat-aos-delay="100">
-      <img src="assets/img/clients/client-2.png" alt="garbagebin4" />
+      <img src="/assets/img/clients/client-2.png" alt="garbagebin4" />
     </div>
   </div>
 </template>
@@ -281,8 +281,8 @@
 }
 .garbagebin4 {
   position: fixed;
-  top: 22%;
-  left: 96%;
+  top: 20%;
+  left: 97%;
   transform: translate(-50%, -50%);
 }
 </style>

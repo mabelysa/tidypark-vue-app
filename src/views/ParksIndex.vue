@@ -226,30 +226,48 @@ export default {
         this.committeds = response.data;
         console.log("All committeds:", this.committeds);
       });
-      setTimeout(() => this.mostRequested(), 7000);
+      setTimeout(() => this.mostRequested(), 5000);
     },
 
     mostRequested: function () {
-      console.log("displaying most requested park");
       var newCommitteds = this.committeds.map(function (committed) {
         return committed["park"]["name"];
       });
-      console.log("displays most requested park", newCommitteds);
+      console.log("displays all park names", newCommitteds);
+
       // if (condition) {
       //   //  block of code to be executed if the condition is true
       // } else {
       //   //  block of code to be executed if the condition is false
       // }
 
-      var sortedCommitteds = newCommitteds.sort();
-      var start = newCommitteds[0],
-        mostRequestedPark;
-      for (var i = 0; i < sortedCommitteds.length; i++) {
-        if (start === sortedCommitteds[i] || sortedCommitteds[i] === sortedCommitteds[i + 1]) {
-          mostRequestedPark = sortedCommitteds[i];
+      // var sortedCommitteds = newCommitteds.sort();
+      // var start = newCommitteds[0],
+      //   mostRequestedPark;
+      // for (var i = 0; i < sortedCommitteds.length; i++) {
+      //   if (start === sortedCommitteds[i] || sortedCommitteds[i] === sortedCommitteds[i + 1]) {
+      //     mostRequestedPark = sortedCommitteds[i];
+      //   }
+      // }
+      // console.log("counts most requested park", mostRequestedPark);
+      // this.mostRequestedPark = mostRequestedPark;
+      var numCommitteds = {};
+      for (var i = 0; i < newCommitteds.length; i++) {
+        if (!(newCommitteds[i] in numCommitteds)) {
+          numCommitteds[newCommitteds[i]] = 1;
+        } else {
+          numCommitteds[newCommitteds[i]] += 1;
         }
       }
-      console.log("counts most requested park", mostRequestedPark);
+      console.log("creates the object of park frequencies", numCommitteds);
+      var maxCommitted = 0;
+      var mostRequestedPark = "";
+      for (let park in numCommitteds) {
+        if (numCommitteds[park] > maxCommitted) {
+          maxCommitted = numCommitteds[park];
+          mostRequestedPark = park;
+        }
+      }
       this.mostRequestedPark = mostRequestedPark;
     },
   },

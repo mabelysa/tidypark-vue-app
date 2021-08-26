@@ -1,29 +1,11 @@
 <template>
   <div class="contact-index">
-    <form v-on:submit.prevent="updateContact()">
-      <h1>{{ message }}</h1>
-      <ul>
-        <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
-      </ul>
-      <h2>Edit your contact info below:</h2>
-      <div>
-        <label>First Name:</label>
-        <input type="text" v-model="currentUserParams.first_name" />
-      </div>
-      <div>
-        <label>Last Name:</label>
-        <input type="text" v-model="currentUserParams.last_name" />
-      </div>
-      <div>
-        <label>Phone Number:</label>
-        <input type="text" v-model="currentUserParams.phone_number" />
-      </div>
-      <br />
-      <input type="submit" value="Submit" />
-      <router-link v-bind:to="`/committeds`">
-        <button>Back to {{ user.first_name }} Account</button>
-      </router-link>
-    </form>
+    <h1>Your Contact Info Below: {{ user.first_name }}!</h1>
+    <h2>{{ committed.current_user }}</h2>
+    <!-- <h3>{{ message3 }}</h3>
+    <h3>{{ message4 }}</h3> -->
+    <br />
+    <router-link to="/committeds"><b>Back Your Committments!</b></router-link>
   </div>
 </template>
 
@@ -33,21 +15,25 @@ import axios from "axios";
 export default {
   data: function () {
     return {
-      message: "Update your contact info here!",
+      message: "",
       user: {},
+      current_user_id: localStorage.getItem("user_id"),
     };
   },
 
   created: function () {
-    this.indexParks();
+    axios.get("http://localhost:3000/users/" + this.current_user_id).then((response) => {
+      this.user = response.data;
+      console.log("prints user", this.user);
+    });
   },
-  methods: {
-    indexParks: function () {
-      axios.get("http://localhost:3000/parks").then((response) => {
-        this.parks = response.data;
-        console.log("All parks:", this.parks);
-      });
-    },
-  },
+  // methods: {
+  //   indexParks: function () {
+  //     axios.get("http://localhost:3000/parks").then((response) => {
+  //       this.parks = response.data;
+  //       console.log("All parks:", this.parks);
+  //     });
+  //   },
+  // },
 };
 </script>
