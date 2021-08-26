@@ -77,7 +77,7 @@
 }
 
 .submitbutton {
-  padding-left: 110px;
+  padding-left: 130px;
 }
 
 .garbagebin2 {
