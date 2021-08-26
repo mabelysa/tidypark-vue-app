@@ -14,6 +14,14 @@
             <b>{{ message3 }}</b>
             <br />
             <b>{{ message4 }}</b>
+            <br />
+            <br />
+            Don't forget to post your park cleanup on social media using the hashtags
+            <br />
+            <b>#TidyPark</b>
+            and/or
+            <b>#BinIt</b>
+            during park cleanup day!
           </p>
           <!-- <router-link v-bind:to="`/users/${user.id}/edit`">
             <button>Edit Contact Info</button>
