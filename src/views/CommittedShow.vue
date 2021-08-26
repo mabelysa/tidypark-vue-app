@@ -1,5 +1,29 @@
 <template>
   <div class="committeds-show">
+    <!-- ======= Gallery Section ======= -->
+    <br />
+    <br />
+    <br />
+    <section id="gallery">
+      <div class="container-fluid">
+        <div class="section-header">
+          <h3 class="section-title">Your Selected Park</h3>
+          <span class="section-divider"></span>
+          <p class="section-description">{{ park.name }}</p>
+        </div>
+        <!-- <div class="row no-gutters">
+          <div class="col-lg-4 col-md-6">
+            <div class="gallery-item">
+              <a href="assets/img/gallery/gallery-1.jpg" data-gall="portfolioGallery" class="gallery-lightbox">
+                <img src="assets/img/gallery/gallery-1.jpg" alt="" />
+              </a>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </section>
+    <!-- End Gallery Section -->
+    <!-- OLD CODE -->
     <div class="container">
       <p><img v-bind:src="park.image_url" alt="park.image_url" /></p>
       <p v-if="1 == park.id">
@@ -193,6 +217,7 @@
         {{ committed.reason }}
       </span>
       <br />
+      <br />
       <!-- <li v-if="$parent.getUserId() == post.user_id"> -->
       <router-link v-bind:to="`/committeds/${committed.id}/edit`"><button>Edit Commitment</button></router-link>
       <!-- </li> -->
@@ -203,8 +228,33 @@
         <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
       </ul>
     </div>
+    <!-- ======= Call To Action Section ======= -->
+    <section id="call-to-action">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-9 text-center text-lg-start">
+            <h3 class="cta-title"></h3>
+            <p class="cta-text"></p>
+          </div>
+          <div class="col-lg-3 cta-btn-container text-center"></div>
+        </div>
+      </div>
+    </section>
+    <!-- End Call To Action Section -->
+    <div class="garbagebin4" dat-aos-delay="100">
+      <img src="/assets/img/clients/client-2.png" alt="garbagebin6" />
+    </div>
   </div>
 </template>
+
+<style>
+.garbagebin6 {
+  position: fixed;
+  top: 20%;
+  left: 97%;
+  transform: translate(-50%, -50%);
+}
+</style>
 
 <script>
 import axios from "axios";
