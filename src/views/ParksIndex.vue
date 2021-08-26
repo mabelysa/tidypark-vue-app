@@ -193,7 +193,8 @@ export default {
     var map = new mapboxgl.Map({
       container: "map",
       // Replace YOUR_STYLE_URL with your style URL.
-      style: "mapbox://styles/mabelysa/cksorx77f1yyd17n4f9mye5ty",
+      // style: "mapbox://styles/mabelysa/cksorx77f1yyd17n4f9mye5ty",
+      style: "mapbox://styles/mabelysa/cksseejfd34sm17qppfb0dlvk",
       center: [-73.98553821722048, 40.743916217262516],
       zoom: 9.25,
     });
