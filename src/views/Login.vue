@@ -37,7 +37,7 @@
                 </p> -->
                 <br />
                 <i class="bi bi-calendar4-week"></i>
-                <p>You're on your way, to clean a park on that day!</p>
+                <p>You're on your way, to clean a park for that day!</p>
                 <i class="bi bi-bar-chart"></i>
                 <p>Progress Status: 2/3 ...</p>
               </div>
