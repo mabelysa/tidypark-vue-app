@@ -111,9 +111,9 @@
                   <div>
                     <i class="bi bi-geo-alt"></i>
                     <p>
-                      717 Park Avenue
+                      717 Castle Hill Avenue
                       <br />
-                      New York, NY 10065
+                      Bronx, NY 10473
                     </p>
                   </div>
 
