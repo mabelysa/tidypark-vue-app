@@ -81,6 +81,7 @@
 
 <script>
 import axios from "axios";
+import swal from "sweetalert";
 
 export default {
   data: function () {
@@ -99,6 +100,12 @@ export default {
           localStorage.setItem("user_id", response.data.user_id);
           console.log(response.data);
           this.$router.push("/parks");
+          swal({
+            title: "-Welcome to Tidy Park-",
+            text: "Let's get ready to tackle some mess!",
+            icon: "success",
+            button: "Right On!!",
+          });
         })
         .catch((error) => {
           console.log(error.response);

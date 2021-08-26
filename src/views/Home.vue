@@ -14,7 +14,7 @@
           </h3>
           <p>{{ message3 }}</p>
           <p>{{ message4 }}</p>
-          <a href="/signup" class="btn-get-started scrollto">Sign Up Here</a>
+          <a href="/signup" v-on:onclick="sweetalertpop()" class="btn-get-started scrollto">Sign Up Here</a>
         </div>
 
         <div class="product-screens">
@@ -211,14 +211,14 @@
 <style></style>
 
 <script>
-import swal from "sweetalert";
+// import swal from "sweetalert";
 // swal("Welcome to Tidy Park!");
-swal({
-  title: "-Welcome to Tidy Park-",
-  text: "Let's get ready to tackle some mess!",
-  icon: "success",
-  button: "Right On!!",
-});
+// swal({
+//   title: "-Welcome to Tidy Park-",
+//   text: "Let's get ready to tackle some mess!",
+//   icon: "success",
+//   button: "Right On!!",
+// });
 export default {
   data: function () {
     return {
@@ -229,6 +229,15 @@ export default {
     };
   },
   created: function () {},
-  methods: {},
+  // methods: {
+  //   sweetalertpop: function () {
+  //     swal({
+  //       title: "-Welcome to Tidy Park-",
+  //       text: "Let's get ready to tackle some mess!",
+  //       icon: "success",
+  //       button: "Right On!!",
+  //     });
+  //   },
+  // },
 };
 </script>
