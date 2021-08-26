@@ -241,7 +241,7 @@
       </div>
     </section>
     <!-- End Call To Action Section -->
-    <div class="garbagebin4" dat-aos-delay="100">
+    <div class="garbagebin6" dat-aos-delay="100">
       <img src="/assets/img/clients/client-2.png" alt="garbagebin6" />
     </div>
   </div>

@@ -1,5 +1,29 @@
 <template>
   <div class="committeds-edit">
+    <!-- ======= Gallery Section ======= -->
+    <br />
+    <br />
+    <br />
+    <section id="gallery">
+      <div class="container-fluid">
+        <div class="section-header">
+          <h3 class="section-title">-Edit Your Commitment-</h3>
+          <span class="section-divider"></span>
+          <p class="section-description">{{ park.name }}</p>
+        </div>
+        <!-- <div class="row no-gutters">
+          <div class="col-lg-4 col-md-6">
+            <div class="gallery-item">
+              <a href="assets/img/gallery/gallery-1.jpg" data-gall="portfolioGallery" class="gallery-lightbox">
+                <img src="assets/img/gallery/gallery-1.jpg" alt="" />
+              </a>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </section>
+    <!-- End Gallery Section -->
+    <!-- ORIGINAL CODE -->
     <div class="container">
       <p><img v-bind:src="park.image_url" alt="park.image_url" /></p>
       <h2>{{ park.name }}</h2>
@@ -80,11 +104,36 @@
       <router-link v-bind:to="`/committeds/${committed.id}`">Back to {{ park.name }} !</router-link>
       <br />
     </div>
+    <!-- ======= Call To Action Section ======= -->
+    <section id="call-to-action">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-9 text-center text-lg-start">
+            <h3 class="cta-title"></h3>
+            <p class="cta-text"></p>
+          </div>
+          <div class="col-lg-3 cta-btn-container text-center"></div>
+        </div>
+      </div>
+    </section>
+    <!-- End Call To Action Section -->
+    <div class="garbagebin7" dat-aos-delay="100">
+      <img src="/assets/img/clients/client-2.png" alt="garbagebin7" />
+    </div>
     <!-- <li v-if="$parent.getUserId() == park.user_id"> -->
     <!-- </li> -->
     <!-- <router-link v-bind:to="`/parks/${park.id}/committeds`"> -->
   </div>
 </template>
+
+<style>
+.garbagebin7 {
+  position: fixed;
+  top: 19%;
+  left: 4%;
+  transform: translate(-50%, -50%);
+}
+</style>
 
 <script>
 import axios from "axios";
