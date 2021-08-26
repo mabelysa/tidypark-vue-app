@@ -101,7 +101,7 @@ export default {
           console.log(response.data);
           this.$router.push("/parks");
           swal({
-            title: "-Welcome to Tidy Park-",
+            title: "-Welcome Back-",
             text: "Let's get ready to tackle some mess!",
             icon: "success",
             button: "Right On!!",
