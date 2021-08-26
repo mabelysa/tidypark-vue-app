@@ -124,7 +124,7 @@
 
                   <div>
                     <i class="bi bi-phone"></i>
-                    <p>212-555-5757</p>
+                    <p>718-555-5757</p>
                   </div>
                 </div>
               </div>
