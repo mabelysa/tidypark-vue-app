@@ -12,7 +12,7 @@
           <span class="section-divider"></span>
           <p class="section-description">Above are the locations to the parks located in New York City.</p>
           <i class="bi bi-bar-chart"></i>
-          <p>Progress Status: 3/3 ...Now Select a Park!</p>
+          <p>Progress Status: 3/3 ... Now Select a Park!</p>
           <h1>Next Park to Clean Is...{{ mostRequestedPark }}</h1>
           View By Borough, Name or Size:
           <input v-model="searchFilter" />
