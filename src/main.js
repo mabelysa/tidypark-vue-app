@@ -6,7 +6,7 @@ import Vue2Filters from "vue2-filters";
 
 Vue.use(Vue2Filters);
 
-axios.defaults.baseURL = process.env.NODE_ENV === "development" ? "http://localhost:3000" : "/";
+axios.defaults.baseURL = process.env.NODE_ENV === "development" ? "http://localhost:3000" : "https://salty-garden-97039.herokuapp.com/";
 Vue.config.productionTip = false;
 
 var jwt = localStorage.getItem("jwt");
