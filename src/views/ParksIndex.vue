@@ -219,8 +219,16 @@ export default {
     console.log("shows map again", map);
   },
   methods: {
+    parksUrl: function () {
+      if (process.env.NODE_ENV === "development") {
+        return "http://localhost:3000/parks";
+      } else {
+        return "https://salty-garden-97039.herokuapp.com/";
+      }
+    },
+
     indexParks: function () {
-      axios.get("http://localhost:3000/parks").then((response) => {
+      axios.get(parksUrl()).then((response) => {
         this.parks = response.data;
         console.log("All parks:", this.parks);
       });
