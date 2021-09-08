@@ -26,9 +26,12 @@
     <!-- OLD CODE -->
     <div class="container">
       <p><img v-bind:src="park.image_url" alt="park.image_url" /></p>
-      <p v-if="1 == park.id">
+      <p v-if="26 == park.id">
         <img
-          src="https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/-73.8096,40.8679,12.31,0/483x423?access_token=process.env.VUE_APP_TOKEN"
+          :src="
+            `https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/-73.8096,40.8679,12.31,0/483x423?access_token=` +
+            key.api
+          "
           alt="park_id.map"
         />
       </p>
@@ -264,6 +267,7 @@ export default {
       errors: [],
       committed: {},
       park: {},
+      key: { api: process.env.VUE_APP_TOKEN },
     };
   },
   created: function () {
