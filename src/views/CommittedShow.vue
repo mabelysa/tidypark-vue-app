@@ -25,7 +25,7 @@
     <!-- End Gallery Section -->
     <!-- OLD CODE -->
     <div class="container">
-      <p><img v-bind:src="park.image_url" alt="park.image_url" /></p>
+      <p><img class="rounded img-thumbnail" v-bind:src="park.image_url" alt="park.image_url" /></p>
       <p v-if="26 == park.id">
         <img
           :src="
