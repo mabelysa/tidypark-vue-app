@@ -241,7 +241,7 @@ export default {
     };
   },
   created: function () {
-    axios.get("http://localhost:3000/users/" + this.current_user_id).then((response) => {
+    axios.get("/users/" + this.current_user_id).then((response) => {
       this.user = response.data;
       console.log("prints user", this.user);
     });
@@ -249,7 +249,7 @@ export default {
   },
   methods: {
     indexCommitteds: function () {
-      axios.get("http://localhost:3000/committeds").then((response) => {
+      axios.get("/committeds").then((response) => {
         this.committeds = response.data;
         console.log("Your Committed Parks:", this.committeds);
       });

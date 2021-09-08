@@ -35,7 +35,7 @@
               {{ park.size }}
             </span>
             <br />
-            <img v-bind:src="park.image_url" alt="park.image_url" />
+            <img class="rounded img-thumbnail" v-bind:src="park.image_url" alt="park.image_url" />
             <br />
             <router-link v-bind:to="`/parks/${park.id}`">
               <button>Commit to {{ park.name }}!</button>
@@ -235,7 +235,7 @@ export default {
     },
 
     indexCommitteds: function () {
-      axios.get("http://localhost:3000/committeds/all").then((response) => {
+      axios.get("/committeds/all").then((response) => {
         this.committeds = response.data;
         console.log("All committeds:", this.committeds);
       });
