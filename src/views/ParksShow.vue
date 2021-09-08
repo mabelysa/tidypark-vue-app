@@ -34,7 +34,7 @@
       </p>
       <p v-if="27 == park.id">
         <img
-          src="https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/-73.8699,40.816,13.79,0/483x423?access_token=process.env.VUE_APP_TOKEN"
+          src="https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/-73.8699,40.816,13.79,0/483x423?access_token=pk.eyJ1IjoibWFiZWx5c2EiLCJhIjoiY2tycDl4dTR1MDR5MDJwbjg3ZGxveHV3YiJ9.SkvlJ4UOYL86XpNotLqc1A"
           alt="park_id.map"
         />
       </p>
