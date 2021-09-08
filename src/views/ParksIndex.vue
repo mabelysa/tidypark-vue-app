@@ -220,7 +220,15 @@ export default {
   },
   methods: {
     indexParks: function () {
-      axios.get("https://salty-garden-97039.herokuapp.com/parks").then((response) => {
+      let host =
+        process.env.NODE_ENV === "development" ? "http://localhost:3000" : "https://salty-garden-97039.herokuapp.com";
+      // if (process.env.NODE_ENV === "development") {
+      //   host = "http://localhost:3000";
+      // } else {
+      //   host = "https://salty-garden-97039.herokuapp.com";
+      // }
+
+      axios.get(`${host}/parks`).then((response) => {
         this.parks = response.data;
         console.log("All parks:", this.parks);
       });
