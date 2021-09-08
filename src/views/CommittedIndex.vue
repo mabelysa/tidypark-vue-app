@@ -79,7 +79,7 @@
             </span>
             <br />
             <router-link v-bind:to="`/committeds/${committed.id}`">
-              <img v-bind:src="committed.park.image_url" alt="committed.park.image_url" />
+              <img class="rounded img-thumbnail" v-bind:src="committed.park.image_url" alt="committed.park.image_url" />
             </router-link>
           </div>
         </div>
