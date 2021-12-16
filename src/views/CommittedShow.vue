@@ -26,6 +26,11 @@
     <!-- OLD CODE -->
     <div class="container">
       <p><img class="rounded img-thumbnail" v-bind:src="park.image_url" alt="park.image_url" /></p>
+
+      <!-- <p>
+        <img class="rounded img-thumbnail" v-bind:src="park.map_url + '?access_token=' + key.api" alt="park.map_url" />
+      </p> -->
+
       <p v-if="26 == park.id">
         <img
           :src="
@@ -251,6 +256,7 @@
           alt="park_id.map"
         />
       </p>
+
       <h2>{{ park.name }}</h2>
       <span>
         <b>Borough:</b>
