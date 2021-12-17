@@ -25,10 +25,10 @@
     <!-- End Gallery Section -->
     <!-- OLD CODE -->
     <div class="container">
-      <p><img class="rounded img-thumbnail" v-bind:src="park.image_url" alt="park.image_url" /></p>
+      <p><img class="rounded img-thumbnail" v-bind:src="park.image_url" :alt="park.image_url" /></p>
 
       <p>
-        <img class="rounded img-thumbnail" v-bind:src="park.map_url + '?access_token=' + key.api" alt="park.map_url" />
+        <img class="rounded img-thumbnail" :src="urlString(park)" :alt="park.map_url" />
       </p>
 
       <!-- <p><img :src="`${park.map_url}?access_token="${key.api}`" alt="park_id.map" /></p> -->
@@ -186,6 +186,9 @@ export default {
           this.status = error.response.status;
           this.errors = error.response.data.errors;
         });
+    },
+    urlString: function (park) {
+      return `${park.map_url}?access_token=${this.key.api}`;
     },
   },
 };
